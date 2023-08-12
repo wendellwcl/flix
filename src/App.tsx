@@ -1,4 +1,4 @@
-import "./App.css";
+import style from "./App.module.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -18,7 +18,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-    return <RouterProvider router={router} />;
+    return (
+        <div className={style.main_container}>
+            <RouterProvider router={router} />
+        </div>
+    );
 }
 
 export default App;
