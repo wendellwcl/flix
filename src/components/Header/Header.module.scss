@@ -1,0 +1,42 @@
+@import url("../../styles/_variables.css");
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: var(--main-color);
+
+    h1 {
+        font-weight: bold;
+        text-transform: uppercase;
+        color: inherit;
+
+        a {
+            color: inherit;
+        }
+    }
+}
+
+.navbar {
+    ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+}
+
+.navbar {
+    a {
+        text-decoration: none;
+        padding: 0.5em;
+        color: var(--dark-color);
+
+        &:hover {
+            color: var(--main-color);
+        }
+    }
+}
