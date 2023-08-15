@@ -30,7 +30,7 @@ const router = createBrowserRouter([
                 element: <Credits />,
             },
             {
-                path: "/myList",
+                path: "myList",
                 element: <MyList />,
             },
             {
