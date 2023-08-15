@@ -3,6 +3,11 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Root from "./Root";
+import Home from "./pages/Home/Home";
+import Search from "./pages/Search/Search";
+import Credits from "./pages/Credits/Credits";
+import MyList from "./pages/MyList/MyList";
+import Details from "./pages/Details/Details";
 
 import "normalize.css";
 import "./styles/index.css";
@@ -14,15 +19,23 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <div>Home</div>,
+                element: <Home />,
             },
             {
                 path: "search",
-                element: <div>Search</div>,
+                element: <Search />,
             },
             {
                 path: "credits",
-                element: <div>Credits</div>,
+                element: <Credits />,
+            },
+            {
+                path: "/myList",
+                element: <MyList />,
+            },
+            {
+                path: "details",
+                element: <Details />,
             },
         ],
     },

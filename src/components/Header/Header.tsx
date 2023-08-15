@@ -19,6 +19,9 @@ const Header = () => {
                         <Link to={`search`}>Busca</Link>
                     </li>
                     <li>
+                        <Link to={`myList`}>Minha Lista</Link>
+                    </li>
+                    <li>
                         <Link to={`credits`}>Créditos</Link>
                     </li>
                 </ul>
