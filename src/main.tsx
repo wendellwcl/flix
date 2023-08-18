@@ -12,6 +12,8 @@ import Details from "./pages/Details/Details";
 import "normalize.css";
 import "./styles/index.css";
 
+import MoviesContextProvider from "./contexts/moviesContext";
+
 const router = createBrowserRouter([
     {
         path: "/",
@@ -43,6 +45,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <MoviesContextProvider>
+            <RouterProvider router={router} />
+        </MoviesContextProvider>
     </React.StrictMode>
 );
