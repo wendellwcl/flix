@@ -16,7 +16,7 @@ interface IGenres {
 
 interface IMoviesContext {
     trending: IMovies[];
-    nowPlaying: IMovies[];
+    topRated: IMovies[];
     genres: IGenres[];
     loading: boolean;
 }
@@ -31,14 +31,14 @@ const options = {
 
 export const MovieContext = createContext<IMoviesContext>({
     trending: [],
-    nowPlaying: [],
+    topRated: [],
     genres: [],
     loading: true,
 });
 
 const MoviesContextProvider = ({ children }: Props) => {
     const [trending, setTrending] = useState([]);
-    const [nowPlaying, setNowPlaying] = useState([]);
+    const [topRated, setTopRated] = useState([]);
     const [genres, setGenres] = useState([]);
     const [loading, setLoading] = useState<boolean>(true);
 
@@ -54,12 +54,12 @@ const MoviesContextProvider = ({ children }: Props) => {
                 .then((data) => setTrending(data.results))
                 .catch((err) => console.log(err));
 
-            const fetchNowPlaying = await fetch(
-                import.meta.env.VITE_TMDB_MOVIES_TRENDING,
+            const fetchTopRated = await fetch(
+                import.meta.env.VITE_TMDB_MOVIES_TOP_RATED,
                 options
             )
                 .then((res) => res.json())
-                .then((data) => setNowPlaying(data.results))
+                .then((data) => setTopRated(data.results))
                 .catch((err) => console.log(err));
 
             const fetchGenres = await fetch(
@@ -70,8 +70,8 @@ const MoviesContextProvider = ({ children }: Props) => {
                 .then((data) => setGenres(data.genres))
                 .catch((err) => console.log(err));
 
-            Promise.all([fetchTrending, fetchNowPlaying, fetchGenres]).then(
-                () => setLoading(false)
+            Promise.all([fetchTrending, fetchTopRated, fetchGenres]).then(() =>
+                setLoading(false)
             );
         }
 
@@ -80,7 +80,7 @@ const MoviesContextProvider = ({ children }: Props) => {
 
     const contextValue: IMoviesContext = {
         trending,
-        nowPlaying,
+        topRated,
         genres,
         loading,
     };
