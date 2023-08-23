@@ -5,13 +5,15 @@ import Header from "./components/Header/Header";
 import { MovieContext } from "./contexts/MoviesContext";
 
 function Root() {
-    const { trending, nowPlaying, genres } = useContext(MovieContext);
+    const { trending, nowPlaying, genres, loading } = useContext(MovieContext);
 
     return (
         <div className="container">
             <Header />
             <Outlet />
-            {trending.length > 0 && (
+            {loading ? (
+                <h2>Loading...</h2>
+            ) : (
                 <div>
                     <h3>Em Alta</h3>
                     <ul>
@@ -19,20 +21,12 @@ function Root() {
                             <li key={movie.id}>{movie.title}</li>
                         ))}
                     </ul>
-                </div>
-            )}
-            {nowPlaying.length > 0 && (
-                <div>
                     <h3>Em Cartaz</h3>
                     <ul>
                         {nowPlaying.map((movie) => (
                             <li key={movie.id}>{movie.title}</li>
                         ))}
                     </ul>
-                </div>
-            )}
-            {genres.length > 0 && (
-                <div>
                     <h3>Gêneros</h3>
                     <ul>
                         {genres.map((genre) => (

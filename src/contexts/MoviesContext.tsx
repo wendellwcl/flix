@@ -4,10 +4,21 @@ interface Props {
     children: ReactElement;
 }
 
+interface IMovies {
+    id: number;
+    title: string;
+}
+
+interface IGenres {
+    id: number;
+    name: string;
+}
+
 interface IMoviesContext {
-    trending: any[];
-    nowPlaying: any[];
-    genres: any[];
+    trending: IMovies[];
+    nowPlaying: IMovies[];
+    genres: IGenres[];
+    loading: boolean;
 }
 
 const options = {
@@ -22,34 +33,57 @@ export const MovieContext = createContext<IMoviesContext>({
     trending: [],
     nowPlaying: [],
     genres: [],
+    loading: true,
 });
 
 const MoviesContextProvider = ({ children }: Props) => {
     const [trending, setTrending] = useState([]);
     const [nowPlaying, setNowPlaying] = useState([]);
     const [genres, setGenres] = useState([]);
+    const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
-        //Fetch Trending Movies
-        fetch(import.meta.env.VITE_TMDB_MOVIES_TRENDING, options)
-            .then((res) => res.json())
-            .then((data) => setTrending(data.results))
-            .catch((err) => console.log(err));
+        setLoading(true);
 
-        //Fetch Now Playing Movies
-        fetch(import.meta.env.VITE_TMDB_MOVIES_TRENDING, options)
-            .then((res) => res.json())
-            .then((data) => setNowPlaying(data.results))
-            .catch((err) => console.log(err));
+        async function fetchData() {
+            const fetchTrending = await fetch(
+                import.meta.env.VITE_TMDB_MOVIES_TRENDING,
+                options
+            )
+                .then((res) => res.json())
+                .then((data) => setTrending(data.results))
+                .catch((err) => console.log(err));
 
-        //Fetch Genres
-        fetch(import.meta.env.VITE_TMDB_MOVIES_GENRES, options)
-            .then((res) => res.json())
-            .then((data) => setGenres(data.genres))
-            .catch((err) => console.log(err));
+            const fetchNowPlaying = await fetch(
+                import.meta.env.VITE_TMDB_MOVIES_TRENDING,
+                options
+            )
+                .then((res) => res.json())
+                .then((data) => setNowPlaying(data.results))
+                .catch((err) => console.log(err));
+
+            const fetchGenres = await fetch(
+                import.meta.env.VITE_TMDB_MOVIES_GENRES,
+                options
+            )
+                .then((res) => res.json())
+                .then((data) => setGenres(data.genres))
+                .catch((err) => console.log(err));
+
+            Promise.all([fetchTrending, fetchNowPlaying, fetchGenres]).then(
+                () => setLoading(false)
+            );
+        }
+
+        fetchData();
     }, []);
 
-    const contextValue: IMoviesContext = { trending, nowPlaying, genres };
+    const contextValue: IMoviesContext = {
+        trending,
+        nowPlaying,
+        genres,
+        loading,
+    };
 
     return (
         <MovieContext.Provider value={contextValue}>
