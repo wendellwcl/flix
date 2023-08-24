@@ -1,13 +1,22 @@
-@import url("../../styles/_variables.css");
+@import "../../styles/partials/variables";
 
-header {
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0 0 1em 1em;
+    background-color: $main-color;
+}
+
+.header_container {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .logo {
-    color: var(--main-color);
+    color: $dark-color;
 
     h1 {
         font-weight: bold;
@@ -22,21 +31,16 @@ header {
 
 .navbar {
     ul {
-        list-style: none;
         display: flex;
         align-items: center;
-        justify-content: end;
     }
-}
 
-.navbar {
     a {
-        text-decoration: none;
         padding: 0.5em;
-        color: var(--dark-color);
+        color: $dark-color;
 
         &:hover {
-            color: var(--main-color);
+            color: $light-color;
         }
     }
 }

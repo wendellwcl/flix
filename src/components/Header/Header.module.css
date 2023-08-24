@@ -1,12 +1,20 @@
-@import url("../../styles/_variables.css");
-header {
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 0 0 1em 1em;
+  background-color: #418cfc;
+}
+
+.header_container {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .logo {
-  color: var(--main-color);
+  color: #27242c;
 }
 .logo h1 {
   font-weight: bold;
@@ -18,17 +26,13 @@ header {
 }
 
 .navbar ul {
-  list-style: none;
   display: flex;
   align-items: center;
-  justify-content: end;
 }
-
 .navbar a {
-  text-decoration: none;
   padding: 0.5em;
-  color: var(--dark-color);
+  color: #27242c;
 }
 .navbar a:hover {
-  color: var(--main-color);
+  color: #f4f2f7;
 }/*# sourceMappingURL=Header.module.css.map */
