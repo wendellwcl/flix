@@ -12,7 +12,11 @@
 html,
 body {
     background-color: $light-color;
-    padding-bottom: 500px;
+}
+
+body {
+    padding-top: 79.6px;
+    padding-bottom: 1000px;
 }
 
 a {
@@ -28,4 +32,19 @@ li {
     width: 100vw;
     max-width: 1140px;
     margin: 0 auto;
+}
+
+.header-offScreen {
+    position: fixed;
+    top: 20px;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.header-show {
+    transition: all 0.25s ease-in;
+    top: 0;
+    visibility: visible;
+    opacity: 1;
 }

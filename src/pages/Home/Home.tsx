@@ -7,8 +7,6 @@ import HomeSection from "../../components/HomeSection/HomeSection";
 const Home = () => {
     const { trending, topRated } = useContext(MovieContext);
 
-    console.log(topRated);
-
     return (
         <main>
             <HomeSection title="Em Alta" moviesList={trending} />
