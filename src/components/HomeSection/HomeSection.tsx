@@ -1,7 +1,4 @@
-interface IMovie {
-    id: number;
-    title: string;
-}
+import { IMovie } from "../../interfaces/interfaces";
 
 interface Props {
     title: string;
@@ -9,8 +6,6 @@ interface Props {
 }
 
 const HomeSection = ({ title, moviesList }: Props) => {
-    title;
-
     return (
         <section>
             <h3>{title}</h3>

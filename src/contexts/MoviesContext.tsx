@@ -1,23 +1,15 @@
 import { ReactElement, createContext, useEffect, useState } from "react";
 
+import { IMovie, IGenre } from "../interfaces/interfaces";
+
 interface Props {
     children: ReactElement;
 }
 
-interface IMovies {
-    id: number;
-    title: string;
-}
-
-interface IGenres {
-    id: number;
-    name: string;
-}
-
 interface IMoviesContext {
-    trending: IMovies[];
-    topRated: IMovies[];
-    genres: IGenres[];
+    trending: IMovie[];
+    topRated: IMovie[];
+    genres: IGenre[];
     loading: boolean;
 }
 
@@ -37,9 +29,9 @@ export const MovieContext = createContext<IMoviesContext>({
 });
 
 const MoviesContextProvider = ({ children }: Props) => {
-    const [trending, setTrending] = useState([]);
-    const [topRated, setTopRated] = useState([]);
-    const [genres, setGenres] = useState([]);
+    const [trending, setTrending] = useState<IMovie[]>([]);
+    const [topRated, setTopRated] = useState<IMovie[]>([]);
+    const [genres, setGenres] = useState<IGenre[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
