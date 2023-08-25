@@ -44,7 +44,9 @@ li {
 
 .header-show {
     transition: all 0.25s ease-in;
+    position: fixed;
     top: 0;
+    z-index: 100;
     visibility: visible;
     opacity: 1;
 }

@@ -1,8 +1,37 @@
 import style from "./header.module.css";
 
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Header = () => {
+    useEffect(() => {
+        function toggleHeader() {
+            const value: number = window.scrollY;
+            const header: Element | null = document.querySelector(".header");
+
+            if (value >= 150 && value <= 300) {
+                header!.classList.add("header-offScreen");
+            }
+
+            if (value >= 400) {
+                header!.classList.add("header-show");
+            }
+
+            if (value < 150) {
+                header!.classList.remove("header-offScreen");
+                header!.classList.remove("header-show");
+            }
+
+            console.log(value);
+        }
+
+        window.addEventListener("scroll", toggleHeader);
+
+        return () => {
+            window.removeEventListener("scroll", toggleHeader);
+        };
+    }, []);
+
     return (
         <header className={`header ${style.header}`}>
             <div className={`container ${style.header_container}`}>
