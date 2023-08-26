@@ -1,3 +1,4 @@
+//Interfaces
 import { IMovie } from "../../interfaces/interfaces";
 
 interface Props {
@@ -6,13 +7,20 @@ interface Props {
 }
 
 const HomeSection = ({ title, moviesList }: Props) => {
+    console.log(moviesList);
+
     return (
         <section>
             <h3>{title}</h3>
             {moviesList && (
                 <ul>
                     {moviesList.map((movie) => (
-                        <li key={movie.id}>{movie.title}</li>
+                        <div key={movie.id}>
+                            <li>{movie.title}</li>
+                            <img
+                                src={`https://image.tmdb.org/t/p/w300${movie.backdrop_path}`}
+                            />
+                        </div>
                     ))}
                 </ul>
             )}

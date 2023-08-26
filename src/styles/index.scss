@@ -16,7 +16,6 @@ body {
 
 body {
     padding-top: 79.6px;
-    padding-bottom: 1000px;
 }
 
 a {
@@ -35,18 +34,16 @@ li {
 }
 
 .header-offScreen {
-    position: fixed;
-    top: 20px;
-    z-index: 100;
-    visibility: hidden;
-    opacity: 0;
+    position: fixed !important;
+    top: 20px !important;
+    z-index: 100 !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
 }
 
 .header-show {
     transition: all 0.25s ease-in;
-    position: fixed;
-    top: 0;
-    z-index: 100;
-    visibility: visible;
-    opacity: 1;
+    top: 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }

@@ -1,5 +1,6 @@
 import { ReactElement, createContext, useEffect, useState } from "react";
 
+//Interfaces
 import { IMovie, IGenre } from "../interfaces/interfaces";
 
 interface Props {

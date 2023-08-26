@@ -1,7 +1,9 @@
 import { useContext } from "react";
 
+//Context
 import { MovieContext } from "../../contexts/MoviesContext";
 
+//Components
 import HomeSection from "../../components/HomeSection/HomeSection";
 
 const Home = () => {

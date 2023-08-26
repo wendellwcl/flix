@@ -1,8 +1,11 @@
 import { useContext } from "react";
 import { Outlet } from "react-router-dom";
-import Header from "./components/Header/Header";
 
+//Context
 import { MovieContext } from "./contexts/MoviesContext";
+
+//Components
+import Header from "./components/Header/Header";
 
 function Root() {
     const { loading } = useContext(MovieContext);

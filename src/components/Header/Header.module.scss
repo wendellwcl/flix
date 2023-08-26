@@ -40,6 +40,7 @@
         color: $dark-color;
 
         &:hover {
+            transition: all 0.2s;
             color: $light-color;
         }
     }
