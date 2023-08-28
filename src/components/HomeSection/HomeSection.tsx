@@ -1,5 +1,6 @@
 //Interfaces
 import { IMovie } from "../../interfaces/interfaces";
+import CardV1 from "../CardV1/CardV1";
 
 interface Props {
     title: string;
@@ -13,12 +14,7 @@ const HomeSection = ({ title, moviesList }: Props) => {
             {moviesList && (
                 <ul>
                     {moviesList.map((movie) => (
-                        <div key={movie.id}>
-                            <li>{movie.title}</li>
-                            <img
-                                src={`https://image.tmdb.org/t/p/w300${movie.backdrop_path}`}
-                            />
-                        </div>
+                        <CardV1 key={movie.id} movie={movie} />
                     ))}
                 </ul>
             )}
