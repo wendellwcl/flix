@@ -2,13 +2,13 @@ import { useContext } from "react";
 import { Outlet } from "react-router-dom";
 
 //Context
-import { MovieContext } from "./contexts/MoviesContext";
+import { MoviesContext } from "./contexts/MoviesContext";
 
 //Components
 import Header from "./components/Header/Header";
 
 function Root() {
-    const { loading } = useContext(MovieContext);
+    const { loading } = useContext(MoviesContext);
 
     return (
         <div className="container">

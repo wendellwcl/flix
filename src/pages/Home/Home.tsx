@@ -1,13 +1,13 @@
 import { useContext } from "react";
 
 //Context
-import { MovieContext } from "../../contexts/MoviesContext";
+import { MoviesContext } from "../../contexts/MoviesContext";
 
 //Components
 import HomeSection from "../../components/HomeSection/HomeSection";
 
 const Home = () => {
-    const { trending, topRated } = useContext(MovieContext);
+    const { trending, topRated } = useContext(MoviesContext);
 
     return (
         <main>

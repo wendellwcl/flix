@@ -22,8 +22,6 @@ const Header = () => {
                 header!.classList.remove("header-offScreen");
                 header!.classList.remove("header-show");
             }
-
-            console.log(value);
         }
 
         window.addEventListener("scroll", toggleHeader);

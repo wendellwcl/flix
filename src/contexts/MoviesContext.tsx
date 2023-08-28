@@ -22,7 +22,7 @@ const options = {
     },
 };
 
-export const MovieContext = createContext<IMoviesContext>({
+export const MoviesContext = createContext<IMoviesContext>({
     trending: [],
     topRated: [],
     genres: [],
@@ -79,9 +79,9 @@ const MoviesContextProvider = ({ children }: Props) => {
     };
 
     return (
-        <MovieContext.Provider value={contextValue}>
+        <MoviesContext.Provider value={contextValue}>
             {children}
-        </MovieContext.Provider>
+        </MoviesContext.Provider>
     );
 };
 

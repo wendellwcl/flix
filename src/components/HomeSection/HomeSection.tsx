@@ -7,8 +7,6 @@ interface Props {
 }
 
 const HomeSection = ({ title, moviesList }: Props) => {
-    console.log(moviesList);
-
     return (
         <section>
             <h3>{title}</h3>
