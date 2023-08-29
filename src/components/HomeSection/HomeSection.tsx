@@ -12,7 +12,7 @@ const HomeSection = ({ title, moviesList }: Props) => {
         <section>
             <h3>{title}</h3>
             {moviesList && (
-                <ul>
+                <ul style={{ display: "flex", flexWrap: "wrap" }}>
                     {moviesList.map((movie) => (
                         <CardV1 key={movie.id} movie={movie} />
                     ))}

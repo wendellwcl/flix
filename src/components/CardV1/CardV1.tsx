@@ -6,6 +6,9 @@ import { MoviesContext } from "../../contexts/MoviesContext";
 //Interfaces
 import { IMovie } from "../../interfaces/interfaces";
 
+//Style
+import style from "./CardV1.module.css";
+
 interface Props {
     movie: IMovie;
 }
@@ -26,16 +29,18 @@ const CardV1 = ({ movie }: Props) => {
     }, [movie]);
 
     return (
-        <li>
-            <div>
-                <img
-                    src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-                    alt={movie.title}
-                />
+        <li className={style.card1_container}>
+            <div className={style.img_container}>
+                <a href="#">
+                    <img
+                        src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+                        alt={movie.title}
+                    />
+                </a>
             </div>
-            <div>
-                <span>{movie.title}</span>
-                <span>{movieGenre}</span>
+            <div className={style.info_container}>
+                <span className={style.title}>{movie.title}</span>
+                <span className={style.genre}>{movieGenre}</span>
                 <button>Mais Sobre</button>
             </div>
         </li>
