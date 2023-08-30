@@ -1,0 +1,36 @@
+.section_container {
+  padding: 1em;
+}
+.section_container .section_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+}
+.section_container .section_title {
+  font-size: 2em;
+  color: #27242c;
+}
+.section_container .section_subtitle {
+  display: inline-block;
+  color: #418cfc;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+.section_container .section_btn {
+  border: none;
+  border-radius: 1em;
+  background-color: #418cfc;
+  padding: 0.5em 1em;
+  color: #f4f2f7;
+  font-weight: bold;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+.section_container .section_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}/*# sourceMappingURL=HomeSection.module.css.map */
