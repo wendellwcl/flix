@@ -11,8 +11,18 @@ const Home = () => {
 
     return (
         <main>
-            <HomeSection title="Em Alta" moviesList={trending} />
-            <HomeSection title="Melhores Notas" moviesList={topRated} />
+            <HomeSection
+                title="Em Alta"
+                subtitle="Tendencias"
+                moviesList={trending}
+                qty={5}
+            />
+            <HomeSection
+                title="Melhores Notas"
+                subtitle="Mais bem avaliados"
+                moviesList={topRated}
+                qty={4}
+            />
         </main>
     );
 };
