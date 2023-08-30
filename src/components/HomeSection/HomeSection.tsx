@@ -1,6 +1,9 @@
 //Interfaces
 import { IMovie } from "../../interfaces/interfaces";
-import CardV1 from "../CardV1/CardV1";
+import CardTrending from "../CardTrending/CardTrending";
+
+//Styles
+import style from "./HomeSection.module.css";
 
 interface Props {
     title: string;
@@ -14,7 +17,7 @@ const HomeSection = ({ title, moviesList }: Props) => {
             {moviesList && (
                 <ul style={{ display: "flex", flexWrap: "wrap" }}>
                     {moviesList.map((movie) => (
-                        <CardV1 key={movie.id} movie={movie} />
+                        <CardTrending key={movie.id} movie={movie} />
                     ))}
                 </ul>
             )}

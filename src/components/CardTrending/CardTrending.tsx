@@ -7,13 +7,13 @@ import { MoviesContext } from "../../contexts/MoviesContext";
 import { IMovie } from "../../interfaces/interfaces";
 
 //Style
-import style from "./CardV1.module.css";
+import style from "./CardTrending.module.css";
 
 interface Props {
     movie: IMovie;
 }
 
-const CardV1 = ({ movie }: Props) => {
+const CardTrending = ({ movie }: Props) => {
     const { genres } = useContext(MoviesContext);
 
     const [movieGenre, setMovieGenre] = useState<string | null>(null);
@@ -47,4 +47,4 @@ const CardV1 = ({ movie }: Props) => {
     );
 };
 
-export default CardV1;
+export default CardTrending;
