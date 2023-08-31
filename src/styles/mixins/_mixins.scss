@@ -1,0 +1,16 @@
+@import "../partials/variables";
+
+@mixin btn_default {
+    border: none;
+    border-radius: 1em;
+    background: $secondary_color;
+    padding: 0.5em 1em;
+    color: $light_color;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+        background-color: $main_color;
+    }
+}

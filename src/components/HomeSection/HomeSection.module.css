@@ -13,19 +13,22 @@
 }
 .section_container .section_subtitle {
   display: inline-block;
-  color: #418cfc;
+  color: #f94343;
   font-weight: bold;
   margin-bottom: 0.5em;
 }
 .section_container .section_btn {
   border: none;
   border-radius: 1em;
-  background-color: #418cfc;
+  background: #418cfc;
   padding: 0.5em 1em;
   color: #f4f2f7;
-  font-weight: bold;
   font-size: 0.9em;
   cursor: pointer;
+  transition: all 0.2s;
+}
+.section_container .section_btn:hover {
+  background-color: #f94343;
 }
 .section_container .section_list {
   display: flex;

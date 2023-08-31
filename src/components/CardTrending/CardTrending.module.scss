@@ -1,4 +1,5 @@
 @import "../../styles/partials/variables";
+@import "../../styles/mixins/mixins";
 
 .card1_container {
     display: flex;
@@ -51,14 +52,7 @@
         }
 
         button {
-            border: none;
-            border-radius: 1em;
-            background: $main_color;
-            padding: 0.5em;
-            font-weight: bold;
-            color: $light_color;
-            cursor: pointer;
-            transition: all 0.2s;
+            @include btn_default;
         }
     }
 }

@@ -1,4 +1,5 @@
 @import "../../styles/partials/variables";
+@import "../../styles//mixins/mixins";
 
 .section_container {
     padding: 1em;
@@ -23,14 +24,7 @@
     }
 
     .section_btn {
-        border: none;
-        border-radius: 1em;
-        background-color: $main_color;
-        padding: 0.5em 1em;
-        color: $light_color;
-        font-weight: bold;
-        font-size: 0.9em;
-        cursor: pointer;
+        @include btn_default;
     }
 
     .section_list {
