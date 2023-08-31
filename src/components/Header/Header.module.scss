@@ -16,7 +16,7 @@
 }
 
 .logo {
-    color: $dark-color;
+    color: $dark_color;
 
     h1 {
         font-weight: bold;
@@ -37,11 +37,11 @@
 
     a {
         padding: 0.5em;
-        color: $dark-color;
+        color: $light_color;
 
         &:hover {
             transition: all 0.2s;
-            color: $light-color;
+            color: $dark_color;
         }
     }
 }

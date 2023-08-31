@@ -31,9 +31,9 @@
 }
 .navbar a {
   padding: 0.5em;
-  color: #27242c;
+  color: #f4f2f7;
 }
 .navbar a:hover {
   transition: all 0.2s;
-  color: #f4f2f7;
+  color: #27242c;
 }/*# sourceMappingURL=Header.module.css.map */

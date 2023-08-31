@@ -10,12 +10,16 @@
     overflow: hidden;
     width: 100%;
     max-width: 300px;
-    background-color: rgba(0, 0, 0, 0.07);
+    background-color: rgba(0, 0, 0, 0.05);
 
     &:hover {
         .info_container {
             .title {
                 color: $main_color;
+            }
+
+            button {
+                background-color: $main_color;
             }
         }
     }
@@ -40,14 +44,13 @@
 
         .title {
             font-weight: bold;
-            margin-bottom: 0.5em;
-            transition: all 0.2s;
             text-align: center;
+            transition: all 0.2s;
         }
 
         .genre {
             font-size: 0.9em;
-            color: rgba(0, 0, 0, 0.75);
+            color: $main_color;
             margin-bottom: 0.5em;
         }
 

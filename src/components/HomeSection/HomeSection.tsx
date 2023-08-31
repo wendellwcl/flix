@@ -29,22 +29,26 @@ const HomeSection = ({ title, subtitle, moviesList, qty }: Props) => {
 
     return (
         <section className={style.section_container}>
-            <div className={style.section_header}>
-                <div>
-                    <span className={style.section_subtitle}>{subtitle}</span>
-                    <h3 className={style.section_title}>{title}</h3>
+            <div>
+                <div className={style.section_header}>
+                    <div>
+                        <span className={style.section_subtitle}>
+                            {subtitle}
+                        </span>
+                        <h3 className={style.section_title}>{title}</h3>
+                    </div>
+                    <div>
+                        <button className={style.section_btn}>Ver Todos</button>
+                    </div>
                 </div>
-                <div>
-                    <button className={style.section_btn}>Ver Todos</button>
-                </div>
+                {renderList && (
+                    <ul className={style.section_list}>
+                        {renderList.map((movie) => (
+                            <CardTrending key={movie.id} movie={movie} />
+                        ))}
+                    </ul>
+                )}
             </div>
-            {renderList && (
-                <ul className={style.section_list}>
-                    {renderList.map((movie) => (
-                        <CardTrending key={movie.id} movie={movie} />
-                    ))}
-                </ul>
-            )}
         </section>
     );
 };

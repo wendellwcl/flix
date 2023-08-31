@@ -1,11 +1,15 @@
 .section_container {
+  min-height: calc(100vh - 80px);
   padding: 1em;
+  display: flex;
+  align-items: center;
+  margin-bottom: 48px;
 }
 .section_container .section_header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.5em;
+  margin-bottom: 48px;
 }
 .section_container .section_title {
   font-size: 2em;
@@ -26,6 +30,8 @@
   font-size: 0.9em;
   cursor: pointer;
   transition: all 0.2s;
+  padding: 1em;
+  border-radius: 1.5em;
 }
 .section_container .section_btn:hover {
   background-color: #f94343;

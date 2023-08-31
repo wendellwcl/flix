@@ -10,7 +10,7 @@ const Header = () => {
             const value: number = window.scrollY;
             const header: Element | null = document.querySelector(".header");
 
-            if (value >= 150 && value <= 300) {
+            if (value >= 200 && value <= 400) {
                 header!.classList.add("header-offScreen");
             }
 
@@ -18,7 +18,7 @@ const Header = () => {
                 header!.classList.add("header-show");
             }
 
-            if (value < 150) {
+            if (value < 200) {
                 header!.classList.remove("header-offScreen");
                 header!.classList.remove("header-show");
             }
