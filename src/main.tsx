@@ -39,7 +39,7 @@ const router = createBrowserRouter([
                 element: <MyList />,
             },
             {
-                path: "details",
+                path: "details/:id",
                 element: <Details />,
             },
         ],

@@ -41,7 +41,7 @@
   color: #f94343;
   margin-bottom: 0.5em;
 }
-.card1_container .info_container button {
+.card1_container .info_container a {
   border: none;
   border-radius: 1em;
   background: #418cfc;
@@ -51,6 +51,6 @@
   cursor: pointer;
   transition: all 0.2s;
 }
-.card1_container .info_container button:hover {
+.card1_container .info_container a:hover {
   background-color: #f94343;
 }/*# sourceMappingURL=CardTrending.module.css.map */
