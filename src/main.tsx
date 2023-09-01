@@ -12,7 +12,7 @@ import MoviesContextProvider from "./contexts/MoviesContext";
 //Pages
 import Root from "./Root";
 import Home from "./pages/Home/Home";
-import Search from "./pages/Search/Search";
+import Results from "./pages/Results/Results";
 import Credits from "./pages/Credits/Credits";
 import MyList from "./pages/MyList/MyList";
 import Details from "./pages/Details/Details";
@@ -27,8 +27,8 @@ const router = createBrowserRouter([
                 element: <Home />,
             },
             {
-                path: "search",
-                element: <Search />,
+                path: "results",
+                element: <Results />,
             },
             {
                 path: "credits",

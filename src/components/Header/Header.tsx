@@ -45,9 +45,6 @@ const Header = () => {
                             <Link to={`/`}>Home</Link>
                         </li>
                         <li>
-                            <Link to={`search`}>Busca</Link>
-                        </li>
-                        <li>
                             <Link to={`myList`}>Minha Lista</Link>
                         </li>
                         <li>
