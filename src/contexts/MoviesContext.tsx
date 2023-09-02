@@ -12,6 +12,7 @@ interface IMoviesContext {
     topRated: IMovie[];
     genres: IGenre[];
     loading: boolean;
+    setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const options = {
@@ -27,6 +28,9 @@ export const MoviesContext = createContext<IMoviesContext>({
     topRated: [],
     genres: [],
     loading: true,
+    setLoading: () => {
+        return;
+    },
 });
 
 const MoviesContextProvider = ({ children }: Props) => {
@@ -76,6 +80,7 @@ const MoviesContextProvider = ({ children }: Props) => {
         topRated,
         genres,
         loading,
+        setLoading,
     };
 
     return (
