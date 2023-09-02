@@ -1,13 +1,31 @@
+import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 
-//Hooks
-import useFetch from "../../hooks/useFetch";
+//Contexts
+import { MoviesContext } from "../../contexts/MoviesContext";
+
+//Utils
+import fetchTMDBconfig from "../../utils/fetchTMDBconfig";
 
 const Details = () => {
     const { id } = useParams();
-    const movieDetails = useFetch({
-        url: `https://api.themoviedb.org/3/movie/${id}?language=pt-BR`,
-    });
+    const [movieDetails, setMovieDetails] = useState<any>();
+    const { setLoading } = useContext(MoviesContext);
+
+    useEffect(() => {
+        async function fetchMovieDetails() {
+            setLoading(true);
+
+            const movieDetails = await fetchTMDBconfig(
+                `/movie/${id}?language=pt-BR`
+            );
+
+            setMovieDetails(movieDetails);
+            setLoading(false);
+        }
+
+        fetchMovieDetails();
+    }, []);
 
     return (
         <div>

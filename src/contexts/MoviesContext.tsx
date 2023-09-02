@@ -1,5 +1,8 @@
 import { ReactElement, createContext, useEffect, useState } from "react";
 
+//Utils
+import fetchTMDBconfig from "../utils/fetchTMDBconfig";
+
 //Interfaces
 import { IMovie, IGenre } from "../interfaces/interfaces";
 
@@ -14,14 +17,6 @@ interface IMoviesContext {
     loading: boolean;
     setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
-
-const options = {
-    method: "GET",
-    headers: {
-        accept: "application/json",
-        Authorization: `Bearer ${import.meta.env.VITE_ACCESS_TOKEN}`,
-    },
-};
 
 export const MoviesContext = createContext<IMoviesContext>({
     trending: [],
@@ -43,33 +38,22 @@ const MoviesContextProvider = ({ children }: Props) => {
         setLoading(true);
 
         async function fetchData() {
-            const fetchTrending = await fetch(
-                import.meta.env.VITE_TMDB_MOVIES_TRENDING,
-                options
-            )
-                .then((res) => res.json())
-                .then((data) => setTrending(data.results))
-                .catch((err) => console.log(err));
-
-            const fetchTopRated = await fetch(
-                import.meta.env.VITE_TMDB_MOVIES_TOP_RATED,
-                options
-            )
-                .then((res) => res.json())
-                .then((data) => setTopRated(data.results))
-                .catch((err) => console.log(err));
-
-            const fetchGenres = await fetch(
-                import.meta.env.VITE_TMDB_MOVIES_GENRES,
-                options
-            )
-                .then((res) => res.json())
-                .then((data) => setGenres(data.genres))
-                .catch((err) => console.log(err));
-
-            Promise.all([fetchTrending, fetchTopRated, fetchGenres]).then(() =>
-                setLoading(false)
+            const fetchTrending = await fetchTMDBconfig(
+                "/trending/movie/week?language=pt-BR"
             );
+            setTrending(fetchTrending!.results);
+
+            const fetchTopRated = await fetchTMDBconfig(
+                "/movie/top_rated?language=pt-BR&page=1"
+            );
+            setTopRated(fetchTopRated!.results);
+
+            const fetchGenres = await fetchTMDBconfig(
+                "/genre/movie/list?language=pt"
+            );
+            setGenres(fetchGenres!.genres);
+
+            setLoading(false);
         }
 
         fetchData();
