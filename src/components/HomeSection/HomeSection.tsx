@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 
+//Components
+import MovieCardDefault from "../MovieCardDefault/MovieCardDefault";
+
 //Interfaces
 import { IMovie } from "../../interfaces/interfaces";
-import CardTrending from "../CardTrending/CardTrending";
 
 //Styles
 import style from "./HomeSection.module.css";
@@ -44,7 +46,7 @@ const HomeSection = ({ title, subtitle, moviesList, qty }: Props) => {
                 {renderList && (
                     <ul className={style.section_list}>
                         {renderList.map((movie) => (
-                            <CardTrending key={movie.id} movie={movie} />
+                            <MovieCardDefault key={movie.id} movie={movie} />
                         ))}
                     </ul>
                 )}
