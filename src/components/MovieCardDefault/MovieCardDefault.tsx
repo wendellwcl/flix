@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 //Context
 import { MoviesContext } from "../../contexts/MoviesContext";
@@ -8,7 +9,6 @@ import { IMovie } from "../../interfaces/interfaces";
 
 //Style
 import style from "./MovieCardDefault.module.css";
-import { Link } from "react-router-dom";
 
 interface Props {
     movie: IMovie;
@@ -30,7 +30,7 @@ const MovieCardDefault = ({ movie }: Props) => {
     }, [movie]);
 
     return (
-        <li className={style.card1_container}>
+        <div className={style.card_container}>
             <div className={style.img_container}>
                 <Link to={`details/${movie.id}`}>
                     <img
@@ -44,7 +44,7 @@ const MovieCardDefault = ({ movie }: Props) => {
                 <span className={style.genre}>{movieGenre}</span>
                 <Link to={`details/${movie.id}`}>Mais Sobre</Link>
             </div>
-        </li>
+        </div>
     );
 };
 
