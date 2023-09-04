@@ -1,11 +1,20 @@
 .section_container {
   min-height: calc(100vh - 80px);
+  width: 100%;
   padding: 1em;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin-bottom: 48px;
 }
+@media screen and (max-width: 480px) {
+  .section_container {
+    padding: 3em;
+  }
+}
 .section_container .section_header {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -36,10 +45,12 @@
 .section_container .section_btn:hover {
   background-color: #f94343;
 }
-.section_container .section_list {
+.section_container .section_body {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
+  width: 100%;
 }/*# sourceMappingURL=HomeSection.module.css.map */
