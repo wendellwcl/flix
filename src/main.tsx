@@ -27,7 +27,7 @@ const router = createBrowserRouter([
                 element: <Home />,
             },
             {
-                path: "results",
+                path: "results/:query",
                 element: <Results />,
             },
             {
