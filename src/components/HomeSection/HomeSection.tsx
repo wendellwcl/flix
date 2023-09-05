@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 //Components
 import MovieCardDefault from "../MovieCardDefault/MovieCardDefault";
@@ -14,10 +15,12 @@ interface Props {
     subtitle: string;
     moviesList: IMovie[];
     qty: number;
+    endpoint?: string;
 }
 
-const HomeSection = ({ title, subtitle, moviesList, qty }: Props) => {
+const HomeSection = ({ title, subtitle, moviesList, qty, endpoint }: Props) => {
     const [renderList, setRenderList] = useState<IMovie[]>([]);
+    const [encodedEndpoint, setEncodedEndpoint] = useState<string | null>(null);
 
     useEffect(() => {
         const list = [];
@@ -33,6 +36,12 @@ const HomeSection = ({ title, subtitle, moviesList, qty }: Props) => {
         setRenderList(list);
     }, [moviesList]);
 
+    useEffect(() => {
+        if (endpoint) {
+            setEncodedEndpoint(encodeURIComponent(endpoint));
+        }
+    }, [endpoint]);
+
     return (
         <section className={style.section_container}>
             <div className={style.section_header}>
@@ -40,9 +49,16 @@ const HomeSection = ({ title, subtitle, moviesList, qty }: Props) => {
                     <span className={style.section_subtitle}>{subtitle}</span>
                     <h3 className={style.section_title}>{title}</h3>
                 </div>
-                <div>
-                    <button className={style.section_btn}>Ver Todos</button>
-                </div>
+                {encodedEndpoint && (
+                    <div>
+                        <Link
+                            to={`results/${encodedEndpoint}`}
+                            className={style.section_btn}
+                        >
+                            Ver Todos
+                        </Link>
+                    </div>
+                )}
             </div>
             <div className={style.section_body}>
                 {renderList &&
