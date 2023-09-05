@@ -23,6 +23,10 @@ const HomeSection = ({ title, subtitle, moviesList, qty }: Props) => {
         const list = [];
 
         for (let i = 0; i < qty; i++) {
+            if (i === moviesList.length) {
+                break;
+            }
+
             list.push(moviesList[i]);
         }
 
