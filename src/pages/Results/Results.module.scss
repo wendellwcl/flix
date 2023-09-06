@@ -1,0 +1,10 @@
+.moviesList_Container {
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px 20px;
+    width: 100%;
+}
