@@ -7,6 +7,7 @@ import "normalize.css";
 import "./styles/index.css";
 
 //Context
+import LoadingContextProvider from "./contexts/LoadingContext";
 import MoviesContextProvider from "./contexts/MoviesContext";
 
 //Pages
@@ -48,8 +49,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-        <MoviesContextProvider>
-            <RouterProvider router={router} />
-        </MoviesContextProvider>
+        <LoadingContextProvider>
+            <MoviesContextProvider>
+                <RouterProvider router={router} />
+            </MoviesContextProvider>
+        </LoadingContextProvider>
     </React.StrictMode>
 );

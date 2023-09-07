@@ -7,10 +7,11 @@ import fetchTMDBconfig from "../../utils/fetchTMDBconfig";
 //Interfaces
 import { IMovie } from "../../interfaces/interfaces";
 
-import { MoviesContext } from "../../contexts/MoviesContext";
-
 //Components
 import MovieCardDefault from "../../components/MovieCardDefault/MovieCardDefault";
+
+//Contexts
+import { LoadingContext } from "../../contexts/LoadingContext";
 
 //Style
 import style from "./Results.module.css";
@@ -18,21 +19,20 @@ import style from "./Results.module.css";
 const Results = () => {
     const { query } = useParams();
 
-    const { setLoading } = useContext(MoviesContext);
+    const { setLoading } = useContext(LoadingContext);
 
     const [moviesList, setMoviesList] = useState<IMovie[]>();
 
     useEffect(() => {
         async function fetchMoviesList() {
-            setLoading(true);
-
             const data = await fetchTMDBconfig(`${query}&page=1`);
 
             setMoviesList(data.results);
-            setLoading(false);
         }
 
+        setLoading(true);
         fetchMoviesList();
+        setLoading(false);
     }, [query]);
 
     return (
