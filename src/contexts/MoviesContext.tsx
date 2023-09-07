@@ -32,16 +32,16 @@ export const MoviesContext = createContext<IMoviesContext>({
 });
 
 const MoviesContextProvider = ({ children }: Props) => {
-    const { loading, setLoading } = useContext(LoadingContext);
+    const { setLoading } = useContext(LoadingContext);
 
     const [trending, setTrending] = useState<IMovie[]>([]);
     const [topRated, setTopRated] = useState<IMovie[]>([]);
     const [genres, setGenres] = useState<IGenre[]>([]);
 
     useEffect(() => {
-        async function fetchData() {
-            setLoading(true);
+        setLoading(true);
 
+        async function fetchData() {
             const fetchTrending = await fetchTMDBconfig(
                 "/trending/movie/week?language=pt-BR"
             );

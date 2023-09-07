@@ -20,11 +20,11 @@ const MovieCardDefault = ({ movie }: Props) => {
     const [movieGenre, setMovieGenre] = useState<string | null>(null);
 
     useEffect(() => {
-        const genre = genres.filter(filterGenre);
-
         function filterGenre(genre: { id: number }) {
             return genre.id === movie.genre_ids[0];
         }
+
+        const genre = genres.filter(filterGenre);
 
         setMovieGenre(genre[0].name);
     }, [movie]);

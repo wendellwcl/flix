@@ -24,13 +24,14 @@ const Results = () => {
     const [moviesList, setMoviesList] = useState<IMovie[]>();
 
     useEffect(() => {
+        setLoading(true);
+
         async function fetchMoviesList() {
             const data = await fetchTMDBconfig(`${query}&page=1`);
 
             setMoviesList(data.results);
         }
 
-        setLoading(true);
         fetchMoviesList();
         setLoading(false);
     }, [query]);
