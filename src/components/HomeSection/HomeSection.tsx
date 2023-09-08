@@ -1,8 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
 //Components
 import MovieCardDefault from "../MovieCardDefault/MovieCardDefault";
+
+//Contexts
+import { ResultsPageTitleContext } from "../../contexts/ResultsPageTitleContext";
 
 //Interfaces
 import { IMovie } from "../../interfaces/interfaces";
@@ -19,6 +22,8 @@ interface Props {
 }
 
 const HomeSection = ({ title, subtitle, moviesList, qty, endpoint }: Props) => {
+    const { setResultsPageTitle } = useContext(ResultsPageTitleContext);
+
     const [renderList, setRenderList] = useState<IMovie[]>([]);
     const [encodedEndpoint, setEncodedEndpoint] = useState<string | null>(null);
 
@@ -54,6 +59,7 @@ const HomeSection = ({ title, subtitle, moviesList, qty, endpoint }: Props) => {
                         <Link
                             to={`results/${encodedEndpoint}`}
                             className={style.section_btn}
+                            onClick={() => setResultsPageTitle(title)}
                         >
                             Ver Todos
                         </Link>

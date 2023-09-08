@@ -9,6 +9,7 @@ import "./styles/index.css";
 //Context
 import LoadingContextProvider from "./contexts/LoadingContext";
 import MoviesContextProvider from "./contexts/MoviesContext";
+import ResultsPageTitleContextProvider from "./contexts/ResultsPageTitleContext";
 
 //Pages
 import Root from "./Root";
@@ -51,7 +52,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
         <LoadingContextProvider>
             <MoviesContextProvider>
-                <RouterProvider router={router} />
+                <ResultsPageTitleContextProvider>
+                    <RouterProvider router={router} />
+                </ResultsPageTitleContextProvider>
             </MoviesContextProvider>
         </LoadingContextProvider>
     </React.StrictMode>
