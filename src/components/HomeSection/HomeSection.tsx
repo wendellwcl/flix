@@ -57,7 +57,7 @@ const HomeSection = ({ title, subtitle, moviesList, qty, endpoint }: Props) => {
                 {encodedEndpoint && (
                     <div>
                         <Link
-                            to={`results/${encodedEndpoint}`}
+                            to={`/results/${encodedEndpoint}`}
                             className={style.section_btn}
                             onClick={() => setResultsPageTitle(title)}
                         >

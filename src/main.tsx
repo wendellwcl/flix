@@ -29,7 +29,7 @@ const router = createBrowserRouter([
                 element: <Home />,
             },
             {
-                path: "results/:query",
+                path: "results/:query/:page",
                 element: <Results />,
             },
             {
