@@ -1,5 +1,19 @@
-.moviesList_Container {
+.results_container {
   padding: 1em;
+}
+
+.results_header {
+  margin-bottom: 1.5em;
+}
+.results_header .results_title {
+  font-size: 1.2em;
+}
+.results_header .results_title span {
+  font-size: 1.2em;
+  color: #f94343;
+}
+
+.results_list {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -7,4 +21,36 @@
   flex-wrap: wrap;
   gap: 50px 20px;
   width: 100%;
+}
+@media screen and (max-width: 480px) {
+  .results_list {
+    padding: 1em 2em;
+  }
+}
+
+.pagination_container {
+  width: 100%;
+  height: 100px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5em;
+}
+.pagination_container button {
+  border: none;
+  border-radius: 1em;
+  background: #418cfc;
+  padding: 0.5em 1em;
+  color: #f4f2f7;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: #f94343;
+}
+.pagination_container button:hover {
+  background-color: #f94343;
+}
+.pagination_container button:hover {
+  background-color: #418cfc;
 }/*# sourceMappingURL=Results.module.css.map */
