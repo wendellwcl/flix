@@ -6,14 +6,14 @@ import {
     useContext,
 } from "react";
 
-//Utils
-import fetchTMDBconfig from "../utils/fetchTMDBconfig";
+//Contexts
+import { LoadingContext } from "./LoadingContext";
 
 //Interfaces
 import { IMovie, IGenre } from "../interfaces/interfaces";
 
-//Contexts
-import { LoadingContext } from "./LoadingContext";
+//Utils
+import fetchTMDBconfig from "../utils/fetchTMDBconfig";
 
 interface Props {
     children: ReactElement;
@@ -43,17 +43,17 @@ const MoviesContextProvider = ({ children }: Props) => {
 
         async function fetchData() {
             const fetchTrending = await fetchTMDBconfig(
-                "/trending/movie/week?language=pt-BR"
+                "trending/movie/week?language=pt-BR"
             );
             setTrending(fetchTrending!.results);
 
             const fetchTopRated = await fetchTMDBconfig(
-                "/movie/top_rated?language=pt-BR&page=1"
+                "movie/top_rated?language=pt-BR"
             );
             setTopRated(fetchTopRated!.results);
 
             const fetchGenres = await fetchTMDBconfig(
-                "/genre/movie/list?language=pt"
+                "genre/movie/list?language=pt"
             );
             setGenres(fetchGenres!.genres);
 

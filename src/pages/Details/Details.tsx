@@ -1,11 +1,11 @@
 import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 
-//Utils
-import fetchTMDBconfig from "../../utils/fetchTMDBconfig";
-
 //Contexts
 import { LoadingContext } from "../../contexts/LoadingContext";
+
+//Utils
+import fetchTMDBconfig from "../../utils/fetchTMDBconfig";
 
 const Details = () => {
     const { id } = useParams();
@@ -17,7 +17,7 @@ const Details = () => {
     useEffect(() => {
         async function fetchMovieDetails() {
             const movieDetails = await fetchTMDBconfig(
-                `/movie/${id}?language=pt-BR`
+                `movie/${id}?language=pt-BR`
             );
 
             setMovieDetails(movieDetails);

@@ -2,10 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-//Style
-import "normalize.css";
-import "./styles/index.css";
-
 //Context
 import LoadingContextProvider from "./contexts/LoadingContext";
 import MoviesContextProvider from "./contexts/MoviesContext";
@@ -19,6 +15,10 @@ import Credits from "./pages/Credits/Credits";
 import MyList from "./pages/MyList/MyList";
 import Details from "./pages/Details/Details";
 
+//Style
+import "normalize.css";
+import "./styles/index.css";
+
 const router = createBrowserRouter([
     {
         path: "/",
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
                 element: <Home />,
             },
             {
-                path: "results/:query/:page",
+                path: "results/:query",
                 element: <Results />,
             },
             {
