@@ -9,14 +9,20 @@ async function fetchTMDBconfig(endpoint: string): Promise<any> {
     };
 
     const url = `https://api.themoviedb.org/3/${endpoint}`;
-    let data;
 
-    await fetch(url, options)
-        .then((res) => res.json())
-        .then((res) => (data = res))
-        .catch((err) => console.log(err));
+    try {
+        const response = await fetch(url, options);
 
-    return data;
+        if (response.status != 200) {
+            throw new Error("Ops! Algo deu errado");
+        }
+
+        const data = await response.json();
+
+        return data;
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 export default fetchTMDBconfig;
