@@ -1,0 +1,11 @@
+.loading_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - 80px);
+}
+.loading_container span {
+  font-size: 1.5em;
+  font-weight: bold;
+}/*# sourceMappingURL=LoadingScreen.module.css.map */
