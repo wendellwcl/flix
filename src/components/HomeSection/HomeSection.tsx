@@ -1,11 +1,8 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 //Components
 import MovieCardDefault from "../MovieCardDefault/MovieCardDefault";
-
-//Contexts
-import { ResultsPageTitleContext } from "../../contexts/ResultsPageTitleContext";
 
 //Interfaces
 import { IMovie } from "../../interfaces/interfaces";
@@ -22,10 +19,10 @@ interface Props {
 }
 
 const HomeSection = ({ title, subtitle, moviesList, qty, endpoint }: Props) => {
-    const { setResultsPageTitle } = useContext(ResultsPageTitleContext);
+    const encodedEndpoint = endpoint ? encodeURIComponent(endpoint) : null;
+    const encodedTitle = title.replace(" ", "+");
 
     const [renderList, setRenderList] = useState<IMovie[]>([]);
-    const [encodedEndpoint, setEncodedEndpoint] = useState<string | null>(null);
 
     useEffect(() => {
         const list = [];
@@ -41,12 +38,6 @@ const HomeSection = ({ title, subtitle, moviesList, qty, endpoint }: Props) => {
         setRenderList(list);
     }, [moviesList]);
 
-    useEffect(() => {
-        if (endpoint) {
-            setEncodedEndpoint(encodeURIComponent(endpoint));
-        }
-    }, [endpoint]);
-
     return (
         <section className={style.section_container}>
             <div className={style.section_header}>
@@ -57,9 +48,8 @@ const HomeSection = ({ title, subtitle, moviesList, qty, endpoint }: Props) => {
                 {encodedEndpoint && (
                     <div>
                         <Link
-                            to={`/results/${encodedEndpoint}`}
+                            to={`/results/${encodedTitle}/${encodedEndpoint}`}
                             className={style.section_btn}
-                            onClick={() => setResultsPageTitle(title)}
                         >
                             Ver Todos
                         </Link>

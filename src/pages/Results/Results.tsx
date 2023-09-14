@@ -1,12 +1,11 @@
 import { useEffect, useState, useContext, useRef } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 //Components
 import MovieCardDefault from "../../components/MovieCardDefault/MovieCardDefault";
 
 //Contexts
 import { LoadingContext } from "../../contexts/LoadingContext";
-import { ResultsPageTitleContext } from "../../contexts/ResultsPageTitleContext";
 
 //Interfaces
 import { IMovie } from "../../interfaces/interfaces";
@@ -18,54 +17,61 @@ import fetchTMDBconfig from "../../utils/fetchTMDBconfig";
 import style from "./Results.module.css";
 
 const Results = () => {
-    const { query } = useParams();
+    const navigate = useNavigate();
+    const { query, apiEndpoint, page } = useParams();
+
+    const decodedQuery = query!.replace("+", " ");
+    const encodedApiEndpoint = encodeURIComponent(apiEndpoint!);
+    const decodedApiEndpoint = decodeURIComponent(apiEndpoint!);
+    const currentPage = page ? Number(page) : 1;
 
     const { setLoading } = useContext(LoadingContext);
-    const { resultsPageTitle } = useContext(ResultsPageTitleContext);
 
     const [moviesList, setMoviesList] = useState<IMovie[]>();
-    const [currentPage, setCurrentPage] = useState<number>(1);
 
     const prevBtn = useRef<HTMLButtonElement>(null);
     const nextBtn = useRef<HTMLButtonElement>(null);
 
-    function handlePrev() {
+    function handlePrevPage() {
         if (currentPage > 1) {
-            setCurrentPage(currentPage - 1);
+            navigate(
+                `/results/${query}/${encodedApiEndpoint}/${currentPage - 1}`,
+                { relative: "path" }
+            );
             window.scrollTo(0, 0);
         }
     }
 
-    function handleNext() {
+    function handleNextPage() {
         if (currentPage < 500) {
-            setCurrentPage(currentPage + 1);
+            navigate(
+                `/results/${query}/${encodedApiEndpoint}/${currentPage + 1}`,
+                { relative: "path" }
+            );
             window.scrollTo(0, 0);
         }
     }
 
     useEffect(() => {
-        setLoading(true);
-
         async function fetchMoviesList() {
-            const decodedQuery = decodeURIComponent(query!);
-
             const data = await fetchTMDBconfig(
-                `${decodedQuery}&page=${currentPage}`
+                `${decodedApiEndpoint}&page=${currentPage}`
             );
 
             setMoviesList(data.results);
         }
 
+        setLoading(true);
         fetchMoviesList();
         setLoading(false);
-    }, [query, currentPage]);
+    }, [decodedApiEndpoint, currentPage]);
 
     return (
         <div className={style.results_container}>
             <div className={style.results_header}>
                 <h2 className={style.results_title}>
                     Resultados para:
-                    <span> "{resultsPageTitle}"</span>
+                    <span> "{decodedQuery}"</span>
                 </h2>
             </div>
             <div className={style.results_list}>
@@ -75,11 +81,11 @@ const Results = () => {
                     ))}
             </div>
             <div className={style.pagination_container}>
-                <button ref={prevBtn} onClick={handlePrev}>
+                <button ref={prevBtn} onClick={handlePrevPage}>
                     &lt;
                 </button>
                 <span>{currentPage}</span>
-                <button ref={nextBtn} onClick={handleNext}>
+                <button ref={nextBtn} onClick={handleNextPage}>
                     &gt;
                 </button>
             </div>
