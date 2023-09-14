@@ -13,6 +13,7 @@ import Results from "./pages/Results/Results";
 import Credits from "./pages/Credits/Credits";
 import MyList from "./pages/MyList/MyList";
 import Details from "./pages/Details/Details";
+import NotFound from "./pages/NotFound/NotFound";
 
 //Style
 import "normalize.css";
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
             {
                 path: "details/:id",
                 element: <Details />,
+            },
+            {
+                path: "*",
+                element: <NotFound />,
             },
         ],
     },

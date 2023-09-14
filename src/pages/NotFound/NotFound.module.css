@@ -1,0 +1,36 @@
+.notFound_container {
+  width: 100%;
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.notFound_container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+.notFound_container span {
+  font-size: 1.2em;
+}
+.notFound_container .emphasis {
+  color: #f94343;
+  font-size: 2em;
+  font-weight: bold;
+}
+.notFound_container a {
+  border: none;
+  border-radius: 1em;
+  background: #418cfc;
+  padding: 0.5em 1em;
+  color: #f4f2f7;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.notFound_container a:hover {
+  background-color: #f94343;
+}/*# sourceMappingURL=NotFound.module.css.map */
