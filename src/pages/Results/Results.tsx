@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 
 //Components
 import MovieCardDefault from "../../components/MovieCardDefault/MovieCardDefault";
+import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
 
 //Contexts
 import { LoadingContext } from "../../contexts/LoadingContext";
@@ -25,7 +26,7 @@ const Results = () => {
     const decodedApiEndpoint = decodeURIComponent(apiEndpoint!);
     const currentPage = page ? Number(page) : 1;
 
-    const { setLoading } = useContext(LoadingContext);
+    const { loading, setLoading } = useContext(LoadingContext);
 
     const [moviesList, setMoviesList] = useState<IMovie[]>();
 
@@ -38,7 +39,6 @@ const Results = () => {
                 `/results/${query}/${encodedApiEndpoint}/${currentPage - 1}`,
                 { relative: "path" }
             );
-            window.scrollTo(0, 0);
         }
     }
 
@@ -48,7 +48,6 @@ const Results = () => {
                 `/results/${query}/${encodedApiEndpoint}/${currentPage + 1}`,
                 { relative: "path" }
             );
-            window.scrollTo(0, 0);
         }
     }
 
@@ -61,35 +60,53 @@ const Results = () => {
             setMoviesList(data.results);
         }
 
-        setLoading(true);
-        fetchMoviesList();
-        setLoading(false);
+        async function handleFetch() {
+            setLoading(true);
+
+            await fetchMoviesList();
+
+            window.scrollTo(0, 0);
+
+            setTimeout(() => {
+                setLoading(false);
+            }, 200);
+        }
+
+        handleFetch();
     }, [decodedApiEndpoint, currentPage]);
 
     return (
-        <div className={style.results_container}>
-            <div className={style.results_header}>
-                <h2 className={style.results_title}>
-                    Resultados para:
-                    <span> "{decodedQuery}"</span>
-                </h2>
-            </div>
-            <div className={style.results_list}>
-                {moviesList &&
-                    moviesList.map((movie) => (
-                        <MovieCardDefault key={movie.id} movie={movie} />
-                    ))}
-            </div>
-            <div className={style.pagination_container}>
-                <button ref={prevBtn} onClick={handlePrevPage}>
-                    &lt;
-                </button>
-                <span>{currentPage}</span>
-                <button ref={nextBtn} onClick={handleNextPage}>
-                    &gt;
-                </button>
-            </div>
-        </div>
+        <>
+            {loading && <LoadingScreen />}
+            {!loading && (
+                <div className={style.results_container}>
+                    <div className={style.results_header}>
+                        <h2 className={style.results_title}>
+                            Resultados para:
+                            <span> "{decodedQuery}"</span>
+                        </h2>
+                    </div>
+                    <div className={style.results_list}>
+                        {moviesList &&
+                            moviesList.map((movie) => (
+                                <MovieCardDefault
+                                    key={movie.id}
+                                    movie={movie}
+                                />
+                            ))}
+                    </div>
+                    <div className={style.pagination_container}>
+                        <button ref={prevBtn} onClick={handlePrevPage}>
+                            &lt;
+                        </button>
+                        <span>{currentPage}</span>
+                        <button ref={nextBtn} onClick={handleNextPage}>
+                            &gt;
+                        </button>
+                    </div>
+                </div>
+            )}
+        </>
     );
 };
 
