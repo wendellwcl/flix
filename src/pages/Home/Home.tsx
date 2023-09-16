@@ -3,6 +3,7 @@ import { useContext } from "react";
 //Components
 import HomeSection from "../../components/HomeSection/HomeSection";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
+import Landing from "../../components/Landing/Landing";
 
 //Contexts
 import { LoadingContext } from "../../contexts/LoadingContext";
@@ -19,6 +20,7 @@ const Home = () => {
             {loading && <LoadingScreen />}
             {!loading && (
                 <main>
+                    <Landing />
                     <HomeSection
                         title="Em Alta"
                         subtitle="Tendencias"
