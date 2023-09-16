@@ -22,19 +22,30 @@ const Landing = () => {
     }
 
     return (
-        <div className={style.landing_container}>
-            <p>Bem-vindo ao</p>
-            <h2>Flix</h2>
-            <p>Onde a magia das telonas ganha vida em cada clique!</p>
-            <form onSubmit={(e) => handleSubmit(e)}>
-                <input
-                    type="text"
-                    placeholder="Pesquisar um filme"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                />
-                <button type="submit">Pesquisar</button>
-            </form>
+        <div className={style.landing}>
+            <div className={style.landing_container}>
+                <div className={style.greeting_container}>
+                    <div className={style.greeting}>
+                        <p>Bem-vindo ao</p>
+                        <h2>Flix</h2>
+                    </div>
+                    <p>Onde a magia das telonas ganha vida em cada clique!</p>
+                </div>
+                <form
+                    className={style.search_form}
+                    onSubmit={(e) => handleSubmit(e)}
+                >
+                    <div className={style.search_input}>
+                        <input
+                            type="text"
+                            placeholder="Pesquisar um filme"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                        />
+                        <button type="submit">Pesquisar</button>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 };

@@ -1,4 +1,59 @@
-.landing_container {
+@import "../../styles/mixins/mixins";
+
+.landing {
     width: 100%;
     height: calc(100vh - 80px);
+}
+
+.landing_container {
+    @include container_default;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 1em;
+}
+
+.greeting_container {
+    margin-bottom: 64px;
+
+    .greeting {
+        margin-bottom: 24px;
+
+        p {
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 2.5em;
+        }
+    }
+}
+
+.search_form {
+    .search_input {
+        display: inline-block;
+        border-radius: 1.5em;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        max-width: 420px;
+
+        input {
+            padding: 0.75em 110px 0.75em 1.25em;
+            border: none;
+            display: inline-block;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            @include btn_default;
+            border-radius: 1.5em;
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+        }
+    }
 }
