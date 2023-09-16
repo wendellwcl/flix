@@ -29,6 +29,7 @@ const Results = () => {
     const { loading, setLoading } = useContext(LoadingContext);
 
     const [moviesList, setMoviesList] = useState<IMovie[]>();
+    const [totalPages, setTotalPages] = useState<number>();
 
     const prevBtn = useRef<HTMLButtonElement>(null);
     const nextBtn = useRef<HTMLButtonElement>(null);
@@ -43,7 +44,7 @@ const Results = () => {
     }
 
     function handleNextPage() {
-        if (currentPage < 500) {
+        if (currentPage < totalPages! && currentPage < 500) {
             navigate(
                 `/results/${query}/${encodedApiEndpoint}/${currentPage + 1}`,
                 { relative: "path" }
@@ -58,6 +59,7 @@ const Results = () => {
             );
 
             setMoviesList(data.results);
+            setTotalPages(data.total_pages);
         }
 
         async function handleFetch() {

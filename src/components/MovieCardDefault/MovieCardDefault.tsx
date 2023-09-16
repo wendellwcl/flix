@@ -26,7 +26,9 @@ const MovieCardDefault = ({ movie }: Props) => {
 
         const genre = genres.filter(filterGenre);
 
-        setMovieGenre(genre[0].name);
+        if (genre.length != 0) {
+            setMovieGenre(genre[0].name);
+        }
     }, [movie]);
 
     return (
