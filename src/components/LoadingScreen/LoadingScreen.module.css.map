@@ -1,1 +1,1 @@
-{"version":3,"sources":["LoadingScreen.module.scss","LoadingScreen.module.css"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,WAAA;EACA,0BAAA;ACCJ;ADCI;EACI,gBAAA;EACA,iBAAA;ACCR","file":"LoadingScreen.module.css"}
+{"version":3,"sources":["LoadingScreen.module.scss","../../styles/mixins/_mixins.scss","LoadingScreen.module.css"],"names":[],"mappings":"AAEA;ECgBI,YAAA;EACA,iBAAA;EACA,cAAA;EDhBA,aAAA;EACA,mBAAA;EACA,uBAAA;AECJ;AFCI;EACI,gBAAA;EACA,iBAAA;AECR","file":"LoadingScreen.module.css"}

@@ -1,6 +1,8 @@
 .section_container {
+  width: 100vw;
+  max-width: 1140px;
+  margin: 0 auto;
   min-height: calc(100vh - 80px);
-  width: 100%;
   padding: 1em;
   display: flex;
   flex-direction: column;

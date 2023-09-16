@@ -8,7 +8,7 @@ const Header = () => {
     useEffect(() => {
         function toggleHeader() {
             const value: number = window.scrollY;
-            const header: Element | null = document.querySelector(".header");
+            const header: Element | null = document.querySelector("#header");
 
             if (value >= 200 && value <= 400) {
                 header!.classList.add("header-offScreen");
@@ -32,8 +32,8 @@ const Header = () => {
     }, []);
 
     return (
-        <header className={`header ${style.header}`}>
-            <div className={`container ${style.header_container}`}>
+        <header className={style.header} id="header">
+            <div className={style.header_container}>
                 <div className={style.logo}>
                     <h1>
                         <Link to={`/`}>flix</Link>

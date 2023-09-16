@@ -5,10 +5,10 @@ import Header from "./components/Header/Header";
 
 function Root() {
     return (
-        <div className="container">
+        <>
             <Header />
             <Outlet />
-        </div>
+        </>
     );
 }
 

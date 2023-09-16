@@ -1,9 +1,10 @@
 .loading_container {
+  width: 100vw;
+  max-width: 1140px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: calc(100vh - 80px);
 }
 .loading_container span {
   font-size: 1.5em;

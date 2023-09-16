@@ -1,9 +1,10 @@
+@import "../../styles/mixins/mixins";
+
 .loading_container {
+    @include container_default;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: calc(100vh - 80px);
 
     span {
         font-size: 1.5em;

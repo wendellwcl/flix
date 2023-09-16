@@ -14,3 +14,9 @@
         background-color: $main_color;
     }
 }
+
+@mixin container_default {
+    width: 100vw;
+    max-width: 1140px;
+    margin: 0 auto;
+}

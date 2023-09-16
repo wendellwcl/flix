@@ -2,8 +2,8 @@
 @import "../../styles//mixins/mixins";
 
 .section_container {
+    @include container_default;
     min-height: calc(100vh - 80px);
-    width: 100%;
     padding: 1em;
     display: flex;
     flex-direction: column;

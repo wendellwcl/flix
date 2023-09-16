@@ -2,6 +2,7 @@
 @import "../../styles//mixins/mixins";
 
 .results_container {
+    @include container_default;
     padding: 1em;
 }
 
