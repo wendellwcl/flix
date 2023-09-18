@@ -12,7 +12,7 @@ const Landing = () => {
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
-        const encodedSearchQuery = searchQuery.replace(" ", "+");
+        const encodedSearchQuery = searchQuery.replaceAll(" ", "+");
         const endpoint = `search/movie?query=${encodedSearchQuery}&include_adult=false&language=pt-BR`;
         const encodedEndpoint = encodeURIComponent(endpoint);
 

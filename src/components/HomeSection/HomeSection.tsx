@@ -20,7 +20,7 @@ interface Props {
 
 const HomeSection = ({ title, subtitle, moviesList, qty, endpoint }: Props) => {
     const encodedEndpoint = endpoint ? encodeURIComponent(endpoint) : null;
-    const encodedTitle = title.replace(" ", "+");
+    const encodedTitle = title.replaceAll(" ", "+");
 
     const [renderList, setRenderList] = useState<IMovie[]>([]);
 

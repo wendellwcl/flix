@@ -21,7 +21,7 @@ const Results = () => {
     const navigate = useNavigate();
     const { query, apiEndpoint, page } = useParams();
 
-    const decodedQuery = query!.replace("+", " ");
+    const decodedQuery = query!.replaceAll("+", " ");
     const encodedApiEndpoint = encodeURIComponent(apiEndpoint!);
     const decodedApiEndpoint = decodeURIComponent(apiEndpoint!);
     const currentPage = page ? Number(page) : 1;
