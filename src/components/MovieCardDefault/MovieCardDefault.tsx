@@ -35,15 +35,19 @@ const MovieCardDefault = ({ movie }: Props) => {
         <div className={style.card_container}>
             <div className={style.img_container}>
                 <Link to={`/details/${movie.id}`} relative="path">
-                    <img
-                        src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-                        alt={movie.title}
-                    />
+                    {movie.poster_path ? (
+                        <img
+                            src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+                            alt={movie.title}
+                        />
+                    ) : (
+                        <div className={style.null_img}></div>
+                    )}
                 </Link>
             </div>
             <div className={style.info_container}>
                 <span className={style.title}>{movie.title}</span>
-                <span className={style.genre}>{movieGenre}</span>
+                <span className={style.genre}>{movieGenre || "---"}</span>
                 <Link to={`/details/${movie.id}`} relative="path">
                     Mais Sobre
                 </Link>
