@@ -42,12 +42,6 @@ const Header = () => {
                 <nav className={style.navbar}>
                     <ul>
                         <li>
-                            <Link to={`/`}>Home</Link>
-                        </li>
-                        <li>
-                            <Link to={`myList`}>Minha Lista</Link>
-                        </li>
-                        <li>
                             <Link to={`credits`}>Créditos</Link>
                         </li>
                     </ul>

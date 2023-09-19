@@ -11,7 +11,6 @@ import Root from "./Root";
 import Home from "./pages/Home/Home";
 import Results from "./pages/Results/Results";
 import Credits from "./pages/Credits/Credits";
-import MyList from "./pages/MyList/MyList";
 import Details from "./pages/Details/Details";
 import NotFound from "./pages/NotFound/NotFound";
 
@@ -35,10 +34,6 @@ const router = createBrowserRouter([
             {
                 path: "credits",
                 element: <Credits />,
-            },
-            {
-                path: "myList",
-                element: <MyList />,
             },
             {
                 path: "details/:id",
