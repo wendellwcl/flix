@@ -56,4 +56,8 @@
 }
 .pagination_container button:hover {
   background-color: #418cfc;
+}
+.pagination_container button:disabled {
+  cursor: not-allowed;
+  background-color: #ccc;
 }/*# sourceMappingURL=Results.module.css.map */

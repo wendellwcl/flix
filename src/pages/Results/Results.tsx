@@ -98,11 +98,21 @@ const Results = () => {
                             ))}
                     </div>
                     <div className={style.pagination_container}>
-                        <button ref={prevBtn} onClick={handlePrevPage}>
+                        <button
+                            ref={prevBtn}
+                            onClick={handlePrevPage}
+                            disabled={currentPage == 1}
+                        >
                             &lt;
                         </button>
                         <span>{currentPage}</span>
-                        <button ref={nextBtn} onClick={handleNextPage}>
+                        <button
+                            ref={nextBtn}
+                            onClick={handleNextPage}
+                            disabled={
+                                currentPage >= 500 || currentPage >= totalPages!
+                            }
+                        >
                             &gt;
                         </button>
                     </div>

@@ -49,5 +49,10 @@
         &:hover {
             background-color: $secondary_color;
         }
+
+        &:disabled {
+            cursor: not-allowed;
+            background-color: #ccc;
+        }
     }
 }
