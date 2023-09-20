@@ -1,0 +1,39 @@
+@import "../../styles/partials/variables";
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: $main-color;
+    padding: 2em;
+    border-radius: 7em 7em 0 0;
+    color: $light-color;
+
+    @media screen and (max-width: 480px) {
+        border-radius: 3em 3em 0 0;
+    }
+
+    .credits {
+        margin-bottom: 1em;
+        font-size: 1.1em;
+    }
+
+    .credits_tmdb {
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: $light-color;
+        }
+
+        img {
+            width: 120px;
+            background-color: #0d253f;
+            padding: 1em;
+            border-radius: 1em;
+            margin-bottom: 8px;
+        }
+    }
+}

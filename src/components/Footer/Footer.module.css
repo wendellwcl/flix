@@ -1,0 +1,33 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f94343;
+  padding: 2em;
+  border-radius: 7em 7em 0 0;
+  color: #f4f2f7;
+}
+@media screen and (max-width: 480px) {
+  .footer {
+    border-radius: 3em 3em 0 0;
+  }
+}
+.footer .credits {
+  margin-bottom: 1em;
+  font-size: 1.1em;
+}
+.footer .credits_tmdb a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #f4f2f7;
+}
+.footer .credits_tmdb img {
+  width: 120px;
+  background-color: #0d253f;
+  padding: 1em;
+  border-radius: 1em;
+  margin-bottom: 8px;
+}/*# sourceMappingURL=Footer.module.css.map */
