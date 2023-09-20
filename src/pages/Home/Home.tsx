@@ -4,6 +4,7 @@ import { useContext } from "react";
 import HomeSection from "../../components/HomeSection/HomeSection";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
 import Landing from "../../components/Landing/Landing";
+import Footer from "../../components/Footer/Footer";
 
 //Contexts
 import { LoadingContext } from "../../contexts/LoadingContext";
@@ -35,6 +36,7 @@ const Home = () => {
                         qty={4}
                         endpoint="/movie/top_rated?language=pt-BR"
                     />
+                    <Footer />
                 </main>
             )}
         </>

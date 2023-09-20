@@ -16,6 +16,7 @@ import fetchTMDBconfig from "../../utils/fetchTMDBconfig";
 
 //Style
 import style from "./Results.module.css";
+import Footer from "../../components/Footer/Footer";
 
 const Results = () => {
     const navigate = useNavigate();
@@ -81,42 +82,46 @@ const Results = () => {
         <>
             {loading && <LoadingScreen />}
             {!loading && (
-                <div className={style.results_container}>
-                    <div className={style.results_header}>
-                        <h2 className={style.results_title}>
-                            Resultados para:
-                            <span> "{decodedQuery}"</span>
-                        </h2>
+                <>
+                    <div className={style.results_container}>
+                        <div className={style.results_header}>
+                            <h2 className={style.results_title}>
+                                Resultados para:
+                                <span> "{decodedQuery}"</span>
+                            </h2>
+                        </div>
+                        <div className={style.results_list}>
+                            {moviesList &&
+                                moviesList.map((movie) => (
+                                    <MovieCardDefault
+                                        key={movie.id}
+                                        movie={movie}
+                                    />
+                                ))}
+                        </div>
+                        <div className={style.pagination_container}>
+                            <button
+                                ref={prevBtn}
+                                onClick={handlePrevPage}
+                                disabled={currentPage == 1}
+                            >
+                                &lt;
+                            </button>
+                            <span>{currentPage}</span>
+                            <button
+                                ref={nextBtn}
+                                onClick={handleNextPage}
+                                disabled={
+                                    currentPage >= 500 ||
+                                    currentPage >= totalPages!
+                                }
+                            >
+                                &gt;
+                            </button>
+                        </div>
                     </div>
-                    <div className={style.results_list}>
-                        {moviesList &&
-                            moviesList.map((movie) => (
-                                <MovieCardDefault
-                                    key={movie.id}
-                                    movie={movie}
-                                />
-                            ))}
-                    </div>
-                    <div className={style.pagination_container}>
-                        <button
-                            ref={prevBtn}
-                            onClick={handlePrevPage}
-                            disabled={currentPage == 1}
-                        >
-                            &lt;
-                        </button>
-                        <span>{currentPage}</span>
-                        <button
-                            ref={nextBtn}
-                            onClick={handleNextPage}
-                            disabled={
-                                currentPage >= 500 || currentPage >= totalPages!
-                            }
-                        >
-                            &gt;
-                        </button>
-                    </div>
-                </div>
+                    <Footer />
+                </>
             )}
         </>
     );

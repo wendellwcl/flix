@@ -1,6 +1,9 @@
 import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 
+//Components
+import Footer from "../../components/Footer/Footer";
+
 //Contexts
 import { LoadingContext } from "../../contexts/LoadingContext";
 
@@ -31,14 +34,17 @@ const Details = () => {
     return (
         <div>
             {movieDetails && (
-                <div>
-                    <div>{id}</div>
-                    <div>{movieDetails.title}</div>
-                    <div>{movieDetails.tagline}</div>
-                    <div>{movieDetails.overview}</div>
-                    <div>{movieDetails.runtime}</div>
-                    <div>{movieDetails.vote_average}</div>
-                </div>
+                <>
+                    <div>
+                        <div>{id}</div>
+                        <div>{movieDetails.title}</div>
+                        <div>{movieDetails.tagline}</div>
+                        <div>{movieDetails.overview}</div>
+                        <div>{movieDetails.runtime}</div>
+                        <div>{movieDetails.vote_average}</div>
+                    </div>
+                    <Footer />
+                </>
             )}
         </div>
     );
