@@ -40,27 +40,31 @@ const HomeSection = ({ title, subtitle, moviesList, qty, endpoint }: Props) => {
 
     return (
         <section className={style.section_container}>
-            <div className={style.section_header}>
-                <div>
-                    <span className={style.section_subtitle}>{subtitle}</span>
-                    <h3 className={style.section_title}>{title}</h3>
-                </div>
-                {encodedEndpoint && (
-                    <div>
-                        <Link
-                            to={`/results/${encodedTitle}/${encodedEndpoint}`}
-                            className={style.section_btn}
-                        >
-                            Ver Todos
-                        </Link>
-                    </div>
-                )}
-            </div>
             <div className={style.section_body}>
-                {renderList &&
-                    renderList.map((movie) => (
-                        <MovieCardDefault key={movie.id} movie={movie} />
-                    ))}
+                <div className={style.section_header}>
+                    <div>
+                        <span className={style.section_subtitle}>
+                            {subtitle}
+                        </span>
+                        <h3 className={style.section_title}>{title}</h3>
+                    </div>
+                    {encodedEndpoint && (
+                        <div>
+                            <Link
+                                to={`/results/${encodedTitle}/${encodedEndpoint}`}
+                                className={style.section_btn}
+                            >
+                                Ver Todos
+                            </Link>
+                        </div>
+                    )}
+                </div>
+                <div className={style.section_content}>
+                    {renderList &&
+                        renderList.map((movie) => (
+                            <MovieCardDefault key={movie.id} movie={movie} />
+                        ))}
+                </div>
             </div>
         </section>
     );

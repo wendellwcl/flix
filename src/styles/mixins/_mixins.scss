@@ -3,15 +3,15 @@
 @mixin btn_default {
     border: none;
     border-radius: 1em;
-    background: $secondary_color;
     padding: 0.5em 1em;
-    color: $light_color;
+    background: $color-main;
+    color: $color-light-1;
     font-size: 0.9em;
     cursor: pointer;
     transition: all 0.2s;
 
     &:hover {
-        background-color: $main_color;
+        background-color: $color-main-hover;
     }
 }
 

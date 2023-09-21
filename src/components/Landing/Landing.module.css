@@ -1,6 +1,7 @@
 .landing {
   width: 100%;
   height: calc(100vh - 80px);
+  color: #f5f0f1;
 }
 
 .landing_container {
@@ -40,14 +41,15 @@
   border: none;
   display: inline-block;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #f5f0f1;
+  color: #1d1e1f;
 }
 .search_form .search_input button {
   border: none;
   border-radius: 1em;
-  background: #418cfc;
   padding: 0.5em 1em;
-  color: #f4f2f7;
+  background: #8b2635;
+  color: #f5f0f1;
   font-size: 0.9em;
   cursor: pointer;
   transition: all 0.2s;
@@ -58,5 +60,5 @@
   height: 100%;
 }
 .search_form .search_input button:hover {
-  background-color: #f94343;
+  background-color: #64132e;
 }/*# sourceMappingURL=Landing.module.css.map */

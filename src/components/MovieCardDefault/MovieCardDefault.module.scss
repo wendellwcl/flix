@@ -5,10 +5,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1 1 200px;
+    flex: 1 1 160px;
     max-width: 200px;
     border-radius: 1em;
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: $color-main;
 
     @media screen and (max-width: 480px) {
         flex: 1 1 100%;
@@ -17,12 +17,8 @@
 
     &:hover {
         .info_container {
-            .title {
-                color: $main_color;
-            }
-
             a {
-                background-color: $main_color;
+                background-color: $color-dark-2;
             }
         }
     }
@@ -62,15 +58,17 @@
         white-space: nowrap;
         text-overflow: " ...";
         margin-bottom: 0.5em;
+        color: $color-dark-2;
     }
 
     .genre {
         font-size: 0.9em;
-        color: $main_color;
+        color: $color-dark-1;
         margin-bottom: 1em;
     }
 
     a {
         @include btn_default;
+        background-color: $color-dark-1;
     }
 }

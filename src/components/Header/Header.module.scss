@@ -7,7 +7,12 @@
     left: 0;
     width: 100%;
     border-radius: 0 0 1em 1em;
-    background-color: $main-color;
+    background-color: $color-main;
+    color: $color-light-1;
+
+    a {
+        color: inherit;
+    }
 }
 
 .header_container {
@@ -19,16 +24,9 @@
 }
 
 .logo {
-    color: $dark_color;
-
     h1 {
         font-weight: bold;
         text-transform: uppercase;
-        color: inherit;
-
-        a {
-            color: inherit;
-        }
     }
 }
 
@@ -40,11 +38,10 @@
 
     a {
         padding: 0.5em;
-        color: $light_color;
 
         &:hover {
             transition: all 0.2s;
-            color: $dark_color;
+            color: $color-secondary;
         }
     }
 }

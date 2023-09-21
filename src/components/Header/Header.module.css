@@ -4,7 +4,11 @@
   left: 0;
   width: 100%;
   border-radius: 0 0 1em 1em;
-  background-color: #f94343;
+  background-color: #8b2635;
+  color: #f5f0f1;
+}
+.header a {
+  color: inherit;
 }
 
 .header_container {
@@ -17,16 +21,9 @@
   padding: 0 1em;
 }
 
-.logo {
-  color: #27242c;
-}
 .logo h1 {
   font-weight: bold;
   text-transform: uppercase;
-  color: inherit;
-}
-.logo h1 a {
-  color: inherit;
 }
 
 .navbar ul {
@@ -35,9 +32,8 @@
 }
 .navbar a {
   padding: 0.5em;
-  color: #f4f2f7;
 }
 .navbar a:hover {
   transition: all 0.2s;
-  color: #27242c;
+  color: #dbcaa7;
 }/*# sourceMappingURL=Header.module.css.map */

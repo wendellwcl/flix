@@ -1,8 +1,10 @@
 @import "../../styles/mixins/mixins";
+@import "../../styles/partials/variables";
 
 .landing {
     width: 100%;
     height: calc(100vh - 80px);
+    color: $color-light-1;
 }
 
 .landing_container {
@@ -44,7 +46,8 @@
             border: none;
             display: inline-block;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.1);
+            background-color: $color-light-1;
+            color: $color-dark-2;
         }
 
         button {

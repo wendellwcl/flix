@@ -3,15 +3,18 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #f94343;
+  background-color: #8b2635;
   padding: 2em;
   border-radius: 7em 7em 0 0;
-  color: #f4f2f7;
+  color: #f5f0f1;
 }
 @media screen and (max-width: 480px) {
   .footer {
     border-radius: 3em 3em 0 0;
   }
+}
+.footer a {
+  color: inherit;
 }
 .footer .credits {
   margin-bottom: 1em;
@@ -22,7 +25,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: #f4f2f7;
 }
 .footer .credits_tmdb img {
   width: 120px;

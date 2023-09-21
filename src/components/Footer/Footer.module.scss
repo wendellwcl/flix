@@ -5,13 +5,17 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: $main-color;
+    background-color: $color-main;
     padding: 2em;
     border-radius: 7em 7em 0 0;
-    color: $light-color;
+    color: $color-light-1;
 
     @media screen and (max-width: 480px) {
         border-radius: 3em 3em 0 0;
+    }
+
+    a {
+        color: inherit;
     }
 
     .credits {
@@ -25,7 +29,6 @@
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            color: $light-color;
         }
 
         img {
