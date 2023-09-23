@@ -3,10 +3,10 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #8b2635;
+  background-color: #141414;
   padding: 2em;
   border-radius: 7em 7em 0 0;
-  color: #f5f0f1;
+  color: #f5f7fa;
 }
 @media screen and (max-width: 480px) {
   .footer {

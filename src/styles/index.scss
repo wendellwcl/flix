@@ -11,11 +11,11 @@
 
 html,
 body {
-    background-color: $color-dark-2;
+    background-color: $color-light-1;
 }
 
 body {
-    padding-top: 79.6px;
+    padding-top: $header-height;
 }
 
 a {
@@ -36,8 +36,12 @@ li {
 }
 
 .header-show {
-    transition: all 0.25s ease-in;
+    background-color: $color-main-superdark !important;
+    color: $color-main !important;
+    padding: 12px 0 !important;
     top: 0 !important;
     visibility: visible !important;
     opacity: 1 !important;
+    transition: top 0.25s ease-in, visibility 0.25s ease-in,
+        opacity 0.25s ease-in;
 }

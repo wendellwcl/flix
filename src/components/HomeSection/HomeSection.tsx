@@ -42,21 +42,19 @@ const HomeSection = ({ title, subtitle, moviesList, qty, endpoint }: Props) => {
         <section className={style.section_container}>
             <div className={style.section_body}>
                 <div className={style.section_header}>
-                    <div>
+                    <div className={style.section_title_container}>
+                        <h3 className={style.section_title}>{title}</h3>
                         <span className={style.section_subtitle}>
                             {subtitle}
                         </span>
-                        <h3 className={style.section_title}>{title}</h3>
                     </div>
                     {encodedEndpoint && (
-                        <div>
-                            <Link
-                                to={`/results/${encodedTitle}/${encodedEndpoint}`}
-                                className={style.section_btn}
-                            >
-                                Ver Todos
-                            </Link>
-                        </div>
+                        <Link
+                            to={`/results/${encodedTitle}/${encodedEndpoint}`}
+                            className={style.section_btn}
+                        >
+                            Ver mais
+                        </Link>
                     )}
                 </div>
                 <div className={style.section_content}>

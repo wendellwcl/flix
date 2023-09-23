@@ -14,7 +14,7 @@
 
         span {
             font-size: 1.2em;
-            color: $main_color;
+            color: $color-main;
         }
     }
 }
@@ -22,11 +22,12 @@
 .results_list {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 50px 20px;
+    gap: 1.5em 1em;
     width: 100%;
+    padding: 1em;
 
     @media screen and (max-width: 480px) {
         padding: 1em 2em;
@@ -44,10 +45,10 @@
 
     button {
         @include btn_default;
-        background-color: $main_color;
+        background-color: $color-main;
 
         &:hover {
-            background-color: $secondary_color;
+            background-color: $color-secondary;
         }
 
         &:disabled {

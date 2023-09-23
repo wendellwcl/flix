@@ -3,9 +3,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  border-radius: 0 0 1em 1em;
-  background-color: #8b2635;
-  color: #f5f0f1;
+  padding: 16px 0;
+  background-color: #fc5757;
+  color: #141414;
 }
 .header a {
   color: inherit;
@@ -18,12 +18,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1em;
+  padding: 0 2em;
 }
 
 .logo h1 {
   font-weight: bold;
   text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
 }
 
 .navbar ul {
@@ -31,9 +33,9 @@
   align-items: center;
 }
 .navbar a {
-  padding: 0.5em;
+  font-weight: bold;
 }
 .navbar a:hover {
   transition: all 0.2s;
-  color: #dbcaa7;
+  color: #f5f7fa;
 }/*# sourceMappingURL=Header.module.css.map */

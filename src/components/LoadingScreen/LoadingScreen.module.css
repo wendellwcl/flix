@@ -1,8 +1,5 @@
 .loading_container {
-  width: 100vw;
-  max-width: 1140px;
-  margin: 0 auto;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 68.8px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,5 +7,5 @@
 .loading_container span {
   font-size: 1.5em;
   font-weight: bold;
-  color: #dbcaa7;
+  color: #fc5757;
 }/*# sourceMappingURL=LoadingScreen.module.css.map */

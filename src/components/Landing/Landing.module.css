@@ -1,7 +1,8 @@
 .landing {
   width: 100%;
-  height: calc(100vh - 80px);
-  color: #f5f0f1;
+  height: calc(100vh - 68.8px);
+  color: #f5f7fa;
+  background-color: #140c0c;
 }
 
 .landing_container {
@@ -17,6 +18,7 @@
 
 .greeting_container {
   margin-bottom: 64px;
+  color: #f5f7fa;
 }
 .greeting_container .greeting {
   margin-bottom: 24px;
@@ -26,6 +28,9 @@
 }
 .greeting_container .greeting h2 {
   font-size: 2.5em;
+  color: #fc5757;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .search_form .search_input {
@@ -41,15 +46,15 @@
   border: none;
   display: inline-block;
   width: 100%;
-  background-color: #f5f0f1;
-  color: #1d1e1f;
+  background-color: #f5f7fa;
+  color: #181a1a;
 }
 .search_form .search_input button {
   border: none;
   border-radius: 1em;
   padding: 0.5em 1em;
-  background: #8b2635;
-  color: #f5f0f1;
+  background: #fc5757;
+  color: #f5f7fa;
   font-size: 0.9em;
   cursor: pointer;
   transition: all 0.2s;
@@ -60,5 +65,5 @@
   height: 100%;
 }
 .search_form .search_input button:hover {
-  background-color: #64132e;
+  background-color: #981819;
 }/*# sourceMappingURL=Landing.module.css.map */

@@ -3,8 +3,9 @@
 
 .landing {
     width: 100%;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 68.8px);
     color: $color-light-1;
+    background-color: $color-main-superdark;
 }
 
 .landing_container {
@@ -18,6 +19,7 @@
 
 .greeting_container {
     margin-bottom: 64px;
+    color: $color-light-1;
 
     .greeting {
         margin-bottom: 24px;
@@ -28,6 +30,9 @@
 
         h2 {
             font-size: 2.5em;
+            color: $color-main;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
     }
 }

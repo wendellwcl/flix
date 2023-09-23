@@ -13,17 +13,18 @@
 }
 .results_header .results_title span {
   font-size: 1.2em;
-  color: #f94343;
+  color: #fc5757;
 }
 
 .results_list {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 50px 20px;
+  gap: 1.5em 1em;
   width: 100%;
+  padding: 1em;
 }
 @media screen and (max-width: 480px) {
   .results_list {
@@ -43,19 +44,19 @@
 .pagination_container button {
   border: none;
   border-radius: 1em;
-  background: #418cfc;
   padding: 0.5em 1em;
-  color: #f4f2f7;
+  background: #fc5757;
+  color: #f5f7fa;
   font-size: 0.9em;
   cursor: pointer;
   transition: all 0.2s;
-  background-color: #f94343;
+  background-color: #fc5757;
 }
 .pagination_container button:hover {
-  background-color: #f94343;
+  background-color: #981819;
 }
 .pagination_container button:hover {
-  background-color: #418cfc;
+  background-color: #cbb673;
 }
 .pagination_container button:disabled {
   cursor: not-allowed;

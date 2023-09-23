@@ -1,12 +1,12 @@
 .notFound_container {
   width: 100%;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 68.8px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.notFound_container div {
+.notFound_container .message {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,20 +17,21 @@
   font-size: 1.2em;
 }
 .notFound_container .emphasis {
-  color: #f94343;
+  color: #fc5757;
   font-size: 2em;
   font-weight: bold;
 }
 .notFound_container a {
   border: none;
   border-radius: 1em;
-  background: #418cfc;
   padding: 0.5em 1em;
-  color: #f4f2f7;
+  background: #fc5757;
+  color: #f5f7fa;
   font-size: 0.9em;
   cursor: pointer;
   transition: all 0.2s;
+  padding: 1em;
 }
 .notFound_container a:hover {
-  background-color: #f94343;
+  background-color: #981819;
 }/*# sourceMappingURL=NotFound.module.css.map */

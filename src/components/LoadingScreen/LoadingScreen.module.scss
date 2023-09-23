@@ -2,8 +2,7 @@
 @import "../../styles/partials/variables";
 
 .loading_container {
-    @include container_default;
-    height: calc(100vh - 80px);
+    height: calc(100vh - $header-height);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,6 +10,6 @@
     span {
         font-size: 1.5em;
         font-weight: bold;
-        color: $color-secondary;
+        color: $color-main;
     }
 }

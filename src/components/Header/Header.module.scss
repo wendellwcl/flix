@@ -6,9 +6,9 @@
     top: 0;
     left: 0;
     width: 100%;
-    border-radius: 0 0 1em 1em;
+    padding: 16px 0;
     background-color: $color-main;
-    color: $color-light-1;
+    color: $color-dark-1;
 
     a {
         color: inherit;
@@ -20,13 +20,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 1em;
+    padding: 0 2em;
 }
 
 .logo {
     h1 {
         font-weight: bold;
         text-transform: uppercase;
+        letter-spacing: 2px;
+        margin: 0;
     }
 }
 
@@ -37,11 +39,11 @@
     }
 
     a {
-        padding: 0.5em;
+        font-weight: bold;
 
         &:hover {
             transition: all 0.2s;
-            color: $color-secondary;
+            color: $color-light-1;
         }
     }
 }
