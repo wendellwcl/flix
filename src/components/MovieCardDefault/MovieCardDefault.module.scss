@@ -8,9 +8,10 @@
     flex: 1 1 180px;
     max-width: 200px;
     border-radius: 1em;
-    background-color: $color-dark-2;
+    background-color: $color-light-1;
     overflow: hidden;
     transition: all 0.25s;
+    margin-bottom: 2em;
 
     @media screen and (max-width: 480px) {
         flex: 1 1 100%;
@@ -18,10 +19,8 @@
     }
 
     &:hover {
-        background-color: $color-main-superdark;
-
         .title {
-            color: $color-main;
+            color: $color-main-hover;
         }
     }
 }
@@ -48,7 +47,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0.5em;
+    padding: 0.25em;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -60,15 +59,15 @@
         overflow: hidden;
         white-space: nowrap;
         text-overflow: " ...";
-        margin-bottom: 0.5em;
-        color: $color-light-1;
+        margin-bottom: 0.1em;
+        color: $color-dark-1;
         transition: all 0.25s;
     }
 
     .genre {
         font-size: 0.9em;
-        color: $color-light-2;
-        margin-bottom: 1em;
+        color: $color-dark-2;
+        margin-bottom: 0.5em;
     }
 
     a {

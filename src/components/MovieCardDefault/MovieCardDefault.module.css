@@ -5,9 +5,10 @@
   flex: 1 1 180px;
   max-width: 200px;
   border-radius: 1em;
-  background-color: #181a1a;
+  background-color: #f5f7fa;
   overflow: hidden;
   transition: all 0.25s;
+  margin-bottom: 2em;
 }
 @media screen and (max-width: 480px) {
   .card_container {
@@ -15,11 +16,8 @@
     max-width: 100%;
   }
 }
-.card_container:hover {
-  background-color: #140c0c;
-}
 .card_container:hover .title {
-  color: #fc5757;
+  color: #981819;
 }
 
 .img_container {
@@ -43,7 +41,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.5em;
+  padding: 0.25em;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -55,14 +53,14 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: " ...";
-  margin-bottom: 0.5em;
-  color: #f5f7fa;
+  margin-bottom: 0.1em;
+  color: #141414;
   transition: all 0.25s;
 }
 .info_container .genre {
   font-size: 0.9em;
-  color: #ebeff2;
-  margin-bottom: 1em;
+  color: #181a1a;
+  margin-bottom: 0.5em;
 }
 .info_container a {
   border: none;

@@ -5,7 +5,24 @@
     width: 100%;
     height: calc(100vh - 68.8px);
     color: $color-light-1;
-    background-color: $color-main-superdark;
+    // background-color: $color-main-superdark;
+    background: url("../../assets/img/bg.jpg") no-repeat right top fixed
+        $color-main-superdark;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $color-main-dark;
+        mix-blend-mode: multiply;
+        z-index: 1;
+    }
 }
 
 .landing_container {
@@ -20,6 +37,7 @@
 .greeting_container {
     margin-bottom: 64px;
     color: $color-light-1;
+    z-index: 3;
 
     .greeting {
         margin-bottom: 24px;
@@ -38,6 +56,8 @@
 }
 
 .search_form {
+    z-index: 3;
+
     .search_input {
         display: inline-block;
         border-radius: 1.5em;

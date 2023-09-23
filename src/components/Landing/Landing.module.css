@@ -2,7 +2,21 @@
   width: 100%;
   height: calc(100vh - 68.8px);
   color: #f5f7fa;
-  background-color: #140c0c;
+  background: url("../../assets/img/bg.jpg") no-repeat right top fixed #140c0c;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+.landing:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #521d1d;
+  mix-blend-mode: multiply;
+  z-index: 1;
 }
 
 .landing_container {
@@ -19,6 +33,7 @@
 .greeting_container {
   margin-bottom: 64px;
   color: #f5f7fa;
+  z-index: 3;
 }
 .greeting_container .greeting {
   margin-bottom: 24px;
@@ -33,6 +48,9 @@
   letter-spacing: 2px;
 }
 
+.search_form {
+  z-index: 3;
+}
 .search_form .search_input {
   display: inline-block;
   border-radius: 1.5em;
