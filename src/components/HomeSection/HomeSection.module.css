@@ -5,7 +5,6 @@
   align-items: center;
   justify-content: center;
   padding: 2em;
-  margin-bottom: 2em;
 }
 
 .section_body {
@@ -14,8 +13,6 @@
   margin: 0 auto;
   width: 100%;
   padding: 2em;
-  border-radius: 1em;
-  background-color: #ebeff2;
 }
 @media screen and (max-width: 480px) {
   .section_body {
@@ -35,7 +32,7 @@
 }
 .section_header .section_title {
   font-size: 2em;
-  color: #fc5757;
+  color: #db413b;
 }
 @media screen and (max-width: 480px) {
   .section_header .section_title {
@@ -57,8 +54,8 @@
   border: none;
   border-radius: 1em;
   padding: 0.5em 1em;
-  background: #fc5757;
-  color: #f5f7fa;
+  background: #db413b;
+  color: #f5fbfc;
   font-size: 0.9em;
   cursor: pointer;
   transition: all 0.2s;
@@ -66,7 +63,7 @@
   border-radius: 1.5em;
 }
 .section_header .section_btn:hover {
-  background-color: #981819;
+  background-color: #9c2e2a;
 }
 @media screen and (max-width: 480px) {
   .section_header .section_btn {

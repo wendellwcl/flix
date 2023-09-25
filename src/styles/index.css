@@ -8,7 +8,7 @@
 
 html,
 body {
-  background-color: #f5f7fa;
+  background-color: #f5fbfc;
 }
 
 body {
@@ -34,7 +34,7 @@ li {
 
 .header-show {
   background-color: #140c0c !important;
-  color: #fc5757 !important;
+  color: #db413b !important;
   padding: 12px 0 !important;
   top: 0 !important;
   visibility: visible !important;

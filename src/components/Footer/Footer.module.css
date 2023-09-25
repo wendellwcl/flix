@@ -6,7 +6,7 @@
   background-color: #141414;
   padding: 2em;
   border-radius: 7em 7em 0 0;
-  color: #f5f7fa;
+  color: #f5fbfc;
 }
 @media screen and (max-width: 480px) {
   .footer {

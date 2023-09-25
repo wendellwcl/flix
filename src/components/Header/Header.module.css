@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   padding: 16px 0;
-  background-color: #fc5757;
+  background-color: #db413b;
   color: #141414;
 }
 .header a {
@@ -37,5 +37,5 @@
 }
 .navbar a:hover {
   transition: all 0.2s;
-  color: #f5f7fa;
+  color: #f5fbfc;
 }/*# sourceMappingURL=Header.module.css.map */

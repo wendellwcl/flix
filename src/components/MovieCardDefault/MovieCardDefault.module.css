@@ -5,7 +5,7 @@
   flex: 1 1 180px;
   max-width: 200px;
   border-radius: 1em;
-  background-color: #f5f7fa;
+  background-color: #f5fbfc;
   overflow: hidden;
   transition: all 0.25s;
   margin-bottom: 2em;
@@ -17,7 +17,7 @@
   }
 }
 .card_container:hover .title {
-  color: #981819;
+  color: #9c2e2a;
 }
 
 .img_container {
@@ -66,12 +66,12 @@
   border: none;
   border-radius: 1em;
   padding: 0.5em 1em;
-  background: #fc5757;
-  color: #f5f7fa;
+  background: #db413b;
+  color: #f5fbfc;
   font-size: 0.9em;
   cursor: pointer;
   transition: all 0.2s;
 }
 .info_container a:hover {
-  background-color: #981819;
+  background-color: #9c2e2a;
 }/*# sourceMappingURL=MovieCardDefault.module.css.map */

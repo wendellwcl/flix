@@ -12,6 +12,9 @@ import { LoadingContext } from "../../contexts/LoadingContext";
 //Context
 import { MoviesContext } from "../../contexts/MoviesContext";
 
+//Styles
+import style from "./Home.module.css";
+
 const Home = () => {
     const { trending, topRated } = useContext(MoviesContext);
     const { loading } = useContext(LoadingContext);
@@ -20,7 +23,7 @@ const Home = () => {
         <>
             {loading && <LoadingScreen />}
             {!loading && (
-                <main>
+                <main className={style.home}>
                     <Landing />
                     <HomeSection
                         title="Em Alta"

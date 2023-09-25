@@ -1,0 +1,9 @@
+@import "../../styles/partials/variables";
+
+.home {
+    > section {
+        &:nth-child(even) {
+            background-color: $color-light-2;
+        }
+    }
+}
