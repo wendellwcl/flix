@@ -30,35 +30,4 @@
   .results_list {
     padding: 1em 2em;
   }
-}
-
-.pagination_container {
-  width: 100%;
-  height: 100px;
-  margin: 20px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5em;
-}
-.pagination_container button {
-  border: none;
-  border-radius: 1em;
-  padding: 0.5em 1em;
-  background: #db413b;
-  color: #f5fbfc;
-  font-size: 0.9em;
-  cursor: pointer;
-  transition: all 0.2s;
-  background-color: #db413b;
-}
-.pagination_container button:hover {
-  background-color: #9c2e2a;
-}
-.pagination_container button:hover {
-  background-color: #bfa65c;
-}
-.pagination_container button:disabled {
-  cursor: not-allowed;
-  background-color: #ccc;
 }/*# sourceMappingURL=Results.module.css.map */

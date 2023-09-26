@@ -2,7 +2,7 @@
   width: 100%;
   height: calc(100vh - 68.8px);
   color: #f5fbfc;
-  background: url("../../assets/img/bg.jpg") no-repeat right top fixed #140c0c;
+  background: url("../../../../assets/img/bg.jpg") no-repeat right top fixed #140c0c;
   background-size: cover;
   position: relative;
   z-index: 1;
@@ -14,9 +14,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #5c1b19;
-  mix-blend-mode: multiply;
-  opacity: 0.9;
+  background-color: #141414;
+  opacity: 0.95;
   z-index: 1;
 }
 

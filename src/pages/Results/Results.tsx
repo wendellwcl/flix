@@ -1,9 +1,10 @@
-import { useEffect, useState, useContext, useRef } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useEffect, useState, useContext } from "react";
+import { useParams } from "react-router-dom";
 
 //Components
 import MovieCardDefault from "../../components/MovieCardDefault/MovieCardDefault";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
+import Pagination from "./Components/Pagination/Pagination";
 
 //Contexts
 import { LoadingContext } from "../../contexts/LoadingContext";
@@ -19,7 +20,6 @@ import style from "./Results.module.css";
 import Footer from "../../components/Footer/Footer";
 
 const Results = () => {
-    const navigate = useNavigate();
     const { query, apiEndpoint, page } = useParams();
 
     const decodedQuery = query!.replaceAll("+", " ");
@@ -31,27 +31,6 @@ const Results = () => {
 
     const [moviesList, setMoviesList] = useState<IMovie[]>();
     const [totalPages, setTotalPages] = useState<number>();
-
-    const prevBtn = useRef<HTMLButtonElement>(null);
-    const nextBtn = useRef<HTMLButtonElement>(null);
-
-    function handlePrevPage() {
-        if (currentPage > 1) {
-            navigate(
-                `/results/${query}/${encodedApiEndpoint}/${currentPage - 1}`,
-                { relative: "path" }
-            );
-        }
-    }
-
-    function handleNextPage() {
-        if (currentPage < totalPages! && currentPage < 500) {
-            navigate(
-                `/results/${query}/${encodedApiEndpoint}/${currentPage + 1}`,
-                { relative: "path" }
-            );
-        }
-    }
 
     useEffect(() => {
         async function fetchMoviesList() {
@@ -99,26 +78,12 @@ const Results = () => {
                                     />
                                 ))}
                         </div>
-                        <div className={style.pagination_container}>
-                            <button
-                                ref={prevBtn}
-                                onClick={handlePrevPage}
-                                disabled={currentPage == 1}
-                            >
-                                &lt;
-                            </button>
-                            <span>{currentPage}</span>
-                            <button
-                                ref={nextBtn}
-                                onClick={handleNextPage}
-                                disabled={
-                                    currentPage >= 500 ||
-                                    currentPage >= totalPages!
-                                }
-                            >
-                                &gt;
-                            </button>
-                        </div>
+                        <Pagination
+                            pageNumber={currentPage}
+                            query={query}
+                            encodedApiEndpoint={encodedApiEndpoint}
+                            totalPages={totalPages}
+                        />
                     </div>
                     <Footer />
                 </>

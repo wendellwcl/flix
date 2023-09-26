@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 //Components
-import MovieCardDefault from "../MovieCardDefault/MovieCardDefault";
+import MovieCardDefault from "../../../../components/MovieCardDefault/MovieCardDefault";
 
 //Interfaces
-import { IMovie } from "../../interfaces/interfaces";
+import { IMovie } from "../../../../interfaces/interfaces";
 
 //Styles
 import style from "./HomeSection.module.css";

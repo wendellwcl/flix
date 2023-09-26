@@ -1,9 +1,9 @@
 import { useContext } from "react";
 
 //Components
-import HomeSection from "../../components/HomeSection/HomeSection";
+import HomeSection from "./Components/HomeSection/HomeSection";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
-import Landing from "../../components/Landing/Landing";
+import Landing from "./Components/Landing/Landing";
 import Footer from "../../components/Footer/Footer";
 
 //Contexts

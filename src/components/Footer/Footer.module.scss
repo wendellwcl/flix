@@ -18,47 +18,16 @@
         color: inherit;
     }
 
-    .title {
+    .footer_title {
         margin-bottom: 1em;
         font-size: 1.1em;
     }
 
-    .credits {
+    .credits_container {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
         justify-content: flex-start;
         gap: 2em;
-    }
-
-    .credits_item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        max-width: 100px;
-
-        a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-        }
-
-        img {
-            width: 100px;
-            height: 100px;
-            object-fit: contain;
-            background-color: #0d253f;
-            padding: 1em;
-            border-radius: 1em;
-            margin-bottom: 8px;
-
-            @media screen and (max-width: 480px) {
-                width: 75px;
-                height: 75px;
-            }
-        }
     }
 }

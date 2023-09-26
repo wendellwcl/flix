@@ -16,44 +16,14 @@
 .footer a {
   color: inherit;
 }
-.footer .title {
+.footer .footer_title {
   margin-bottom: 1em;
   font-size: 1.1em;
 }
-.footer .credits {
+.footer .credits_container {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 2em;
-}
-.footer .credits_item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  max-width: 100px;
-}
-.footer .credits_item a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-}
-.footer .credits_item img {
-  width: 100px;
-  height: 100px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  background-color: #0d253f;
-  padding: 1em;
-  border-radius: 1em;
-  margin-bottom: 8px;
-}
-@media screen and (max-width: 480px) {
-  .footer .credits_item img {
-    width: 75px;
-    height: 75px;
-  }
 }/*# sourceMappingURL=Footer.module.css.map */
