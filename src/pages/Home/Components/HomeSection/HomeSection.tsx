@@ -1,11 +1,4 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
-//Components
-import MovieCardDefault from "../../../../components/MovieCardDefault/MovieCardDefault";
-
-//Interfaces
-import { IMovie } from "../../../../interfaces/interfaces";
 
 //Styles
 import style from "./HomeSection.module.css";
@@ -13,30 +6,13 @@ import style from "./HomeSection.module.css";
 interface Props {
     title: string;
     subtitle: string;
-    moviesList: IMovie[];
-    qty: number;
     endpoint?: string;
+    children: React.ReactNode;
 }
 
-const HomeSection = ({ title, subtitle, moviesList, qty, endpoint }: Props) => {
+const HomeSection = ({ title, subtitle, endpoint, children }: Props) => {
     const encodedEndpoint = endpoint ? encodeURIComponent(endpoint) : null;
     const encodedTitle = title.replaceAll(" ", "+");
-
-    const [renderList, setRenderList] = useState<IMovie[]>([]);
-
-    useEffect(() => {
-        const list = [];
-
-        for (let i = 0; i < qty; i++) {
-            if (i === moviesList.length) {
-                break;
-            }
-
-            list.push(moviesList[i]);
-        }
-
-        setRenderList(list);
-    }, [moviesList]);
 
     return (
         <section className={style.section_container}>
@@ -57,12 +33,7 @@ const HomeSection = ({ title, subtitle, moviesList, qty, endpoint }: Props) => {
                         </Link>
                     )}
                 </div>
-                <div className={style.section_content}>
-                    {renderList &&
-                        renderList.map((movie) => (
-                            <MovieCardDefault key={movie.id} movie={movie} />
-                        ))}
-                </div>
+                <div className={style.section_content}>{children}</div>
             </div>
         </section>
     );

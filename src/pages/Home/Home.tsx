@@ -5,6 +5,7 @@ import HomeSection from "./Components/HomeSection/HomeSection";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
 import Landing from "./Components/Landing/Landing";
 import Footer from "../../components/Footer/Footer";
+import MovieCardDefault from "../../components/MovieCardDefault/MovieCardDefault";
 
 //Contexts
 import { LoadingContext } from "../../contexts/LoadingContext";
@@ -28,17 +29,25 @@ const Home = () => {
                     <HomeSection
                         title="Em Alta"
                         subtitle="Tendencias"
-                        moviesList={trending}
-                        qty={5}
                         endpoint="/trending/movie/week?language=pt-BR"
-                    />
+                    >
+                        <MovieCardDefault movie={trending[0]} />
+                        <MovieCardDefault movie={trending[1]} />
+                        <MovieCardDefault movie={trending[2]} />
+                        <MovieCardDefault movie={trending[3]} />
+                        <MovieCardDefault movie={trending[4]} />
+                    </HomeSection>
                     <HomeSection
                         title="Melhores Notas"
                         subtitle="Mais bem avaliados"
-                        moviesList={topRated}
-                        qty={4}
                         endpoint="/movie/top_rated?language=pt-BR"
-                    />
+                    >
+                        <MovieCardDefault movie={topRated[0]} />
+                        <MovieCardDefault movie={topRated[1]} />
+                        <MovieCardDefault movie={topRated[2]} />
+                        <MovieCardDefault movie={topRated[3]} />
+                        <MovieCardDefault movie={topRated[4]} />
+                    </HomeSection>
                     <Footer />
                 </main>
             )}
