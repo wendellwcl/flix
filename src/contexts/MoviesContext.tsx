@@ -22,12 +22,14 @@ interface Props {
 interface IMoviesContext {
     trending: IMovie[];
     topRated: IMovie[];
+    upcoming: IMovie[];
     genres: IGenre[];
 }
 
 export const MoviesContext = createContext<IMoviesContext>({
     trending: [],
     topRated: [],
+    upcoming: [],
     genres: [],
 });
 
@@ -36,6 +38,7 @@ const MoviesContextProvider = ({ children }: Props) => {
 
     const [trending, setTrending] = useState<IMovie[]>([]);
     const [topRated, setTopRated] = useState<IMovie[]>([]);
+    const [upcoming, setUpcoming] = useState<IMovie[]>([]);
     const [genres, setGenres] = useState<IGenre[]>([]);
 
     useEffect(() => {
@@ -45,17 +48,22 @@ const MoviesContextProvider = ({ children }: Props) => {
             const fetchTrending = await fetchTMDBconfig(
                 "trending/movie/week?language=pt-BR"
             );
-            setTrending(fetchTrending!.results);
+            setTrending(fetchTrending.results);
 
             const fetchTopRated = await fetchTMDBconfig(
                 "movie/top_rated?language=pt-BR"
             );
-            setTopRated(fetchTopRated!.results);
+            setTopRated(fetchTopRated.results);
+
+            const fetchUpcoming = await fetchTMDBconfig(
+                "/movie/upcoming?language=pt-BR"
+            );
+            setUpcoming(fetchUpcoming.results);
 
             const fetchGenres = await fetchTMDBconfig(
                 "genre/movie/list?language=pt"
             );
-            setGenres(fetchGenres!.genres);
+            setGenres(fetchGenres.genres);
 
             setLoading(false);
         }
@@ -66,6 +74,7 @@ const MoviesContextProvider = ({ children }: Props) => {
     const contextValue: IMoviesContext = {
         trending,
         topRated,
+        upcoming,
         genres,
     };
 

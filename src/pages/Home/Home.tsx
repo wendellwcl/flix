@@ -17,8 +17,10 @@ import { MoviesContext } from "../../contexts/MoviesContext";
 import style from "./Home.module.css";
 
 const Home = () => {
-    const { trending, topRated } = useContext(MoviesContext);
+    const { trending, topRated, upcoming } = useContext(MoviesContext);
     const { loading } = useContext(LoadingContext);
+
+    console.log(upcoming);
 
     return (
         <>
@@ -47,6 +49,17 @@ const Home = () => {
                         <MovieCardDefault movie={topRated[2]} />
                         <MovieCardDefault movie={topRated[3]} />
                         <MovieCardDefault movie={topRated[4]} />
+                    </HomeSection>
+                    <HomeSection
+                        title="Lançamentos"
+                        subtitle="Melhores lançamentos"
+                        endpoint="/movie/upcoming?language=pt-BR"
+                    >
+                        <MovieCardDefault movie={upcoming[0]} />
+                        <MovieCardDefault movie={upcoming[1]} />
+                        <MovieCardDefault movie={upcoming[2]} />
+                        <MovieCardDefault movie={upcoming[3]} />
+                        <MovieCardDefault movie={upcoming[4]} />
                     </HomeSection>
                     <Footer />
                 </main>
