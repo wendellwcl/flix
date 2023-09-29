@@ -6,6 +6,7 @@ import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
 import Landing from "./Components/Landing/Landing";
 import Footer from "../../components/Footer/Footer";
 import MovieCardDefault from "../../components/MovieCardDefault/MovieCardDefault";
+import MovieCard2 from "../../components/MovieCard2/MovieCard2";
 
 //Contexts
 import { LoadingContext } from "../../contexts/LoadingContext";
@@ -19,8 +20,6 @@ import style from "./Home.module.css";
 const Home = () => {
     const { trending, topRated, upcoming } = useContext(MoviesContext);
     const { loading } = useContext(LoadingContext);
-
-    console.log(upcoming);
 
     return (
         <>
@@ -55,11 +54,11 @@ const Home = () => {
                         subtitle="Melhores lançamentos"
                         endpoint="/movie/upcoming?language=pt-BR"
                     >
-                        <MovieCardDefault movie={upcoming[0]} />
-                        <MovieCardDefault movie={upcoming[1]} />
-                        <MovieCardDefault movie={upcoming[2]} />
-                        <MovieCardDefault movie={upcoming[3]} />
-                        <MovieCardDefault movie={upcoming[4]} />
+                        <MovieCard2 movie={upcoming[0]} />
+                        <MovieCard2 movie={upcoming[1]} />
+                        <MovieCard2 movie={upcoming[2]} />
+                        <MovieCard2 movie={upcoming[3]} />
+                        <MovieCard2 movie={upcoming[4]} />
                     </HomeSection>
                     <Footer />
                 </main>

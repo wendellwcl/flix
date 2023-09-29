@@ -1,0 +1,37 @@
+@import "../../styles/partials/variables";
+
+.card_container {
+    background-color: $color-secondary;
+    border-radius: 1em;
+    color: $color-light-1;
+    overflow: hidden;
+    flex: 1 1 180px;
+    max-width: 200px;
+
+    &:hover {
+        background-color: $color-secondary-hover;
+    }
+
+    @media screen and (max-width: 480px) {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .card_img {
+        width: 100%;
+        aspect-ratio: 3/4;
+
+        img {
+            display: block;
+            width: 100%;
+            aspect-ratio: inherit;
+        }
+    }
+
+    .date {
+        padding: 0.75em 0;
+        font-size: 0.9em;
+        font-weight: bold;
+        text-align: center;
+    }
+}
