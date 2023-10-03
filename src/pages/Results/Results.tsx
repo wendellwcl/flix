@@ -31,6 +31,7 @@ const Results = () => {
 
     const [moviesList, setMoviesList] = useState<IMovie[]>();
     const [totalPages, setTotalPages] = useState<number>();
+    const [noResults, setNoResults] = useState<boolean>(false);
 
     useEffect(() => {
         async function fetchMoviesList() {
@@ -38,8 +39,12 @@ const Results = () => {
                 `${decodedApiEndpoint}&page=${currentPage}`
             );
 
-            setMoviesList(data.results);
-            setTotalPages(data.total_pages);
+            if (data.total_results === 0) {
+                setNoResults(true);
+            } else {
+                setMoviesList(data.results);
+                setTotalPages(data.total_pages);
+            }
         }
 
         async function handleFetch() {
@@ -69,23 +74,34 @@ const Results = () => {
                                 <span> "{decodedQuery}"</span>
                             </h2>
                         </div>
-                        <div className={style.results_list}>
-                            {moviesList &&
-                                moviesList.map((movie) => (
-                                    <MovieCardDefault
-                                        key={movie.id}
-                                        movie={movie}
+                        <div className={style.results_body}>
+                            {noResults && (
+                                <p className={style.noResults_msg}>
+                                    Sem resultados
+                                </p>
+                            )}
+                            {!noResults && (
+                                <>
+                                    <div className={style.results_list}>
+                                        {moviesList &&
+                                            moviesList.map((movie) => (
+                                                <MovieCardDefault
+                                                    key={movie.id}
+                                                    movie={movie}
+                                                />
+                                            ))}
+                                    </div>
+                                    <Pagination
+                                        pageNumber={currentPage}
+                                        query={query}
+                                        encodedApiEndpoint={encodedApiEndpoint}
+                                        totalPages={totalPages}
                                     />
-                                ))}
+                                </>
+                            )}
                         </div>
-                        <Pagination
-                            pageNumber={currentPage}
-                            query={query}
-                            encodedApiEndpoint={encodedApiEndpoint}
-                            totalPages={totalPages}
-                        />
                     </div>
-                    <Footer />
+                    {!noResults && <Footer />}
                 </>
             )}
         </>

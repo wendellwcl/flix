@@ -4,6 +4,7 @@
 .results_container {
     @include container_default;
     padding: 1em;
+    min-height: calc(100vh - $header-height);
 }
 
 .results_header {
@@ -19,13 +20,20 @@
     }
 }
 
+.results_body {
+    .noResults_msg {
+        font-size: 1.1em;
+        text-align: center;
+    }
+}
+
 .results_list {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1.5em 1em;
+    gap: 2em 1em;
     width: 100%;
     padding: 1em;
 
