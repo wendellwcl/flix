@@ -6,6 +6,7 @@ import load_icon from "../../assets/img/load-icon.png";
 
 //Components
 import Footer from "../../components/Footer/Footer";
+import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
 
 //Contexts
 import { LoadingContext } from "../../contexts/LoadingContext";
@@ -19,7 +20,7 @@ import style from "./Details.module.css";
 const Details = () => {
     const { id } = useParams();
 
-    const { setLoading } = useContext(LoadingContext);
+    const { loading, setLoading } = useContext(LoadingContext);
 
     const loadingRef = useRef<HTMLDivElement>(null);
     const imgRef = useRef<HTMLImageElement>(null);
@@ -35,9 +36,19 @@ const Details = () => {
             setMovieDetails(movieDetails);
         }
 
-        setLoading(true);
-        fetchMovieDetails();
-        setLoading(false);
+        async function handleFetch() {
+            setLoading(true);
+
+            await fetchMovieDetails();
+
+            window.scrollTo(0, 0);
+
+            setTimeout(() => {
+                setLoading(false);
+            }, 200);
+        }
+
+        handleFetch();
     }, []);
 
     function handleImgLoad() {
@@ -46,8 +57,9 @@ const Details = () => {
     }
 
     return (
-        <div>
-            {movieDetails && (
+        <>
+            {loading && <LoadingScreen />}
+            {!loading && movieDetails && (
                 <>
                     <div className={style.details_container}>
                         <div className={style.details_body}>
@@ -126,7 +138,7 @@ const Details = () => {
                     <Footer />
                 </>
             )}
-        </div>
+        </>
     );
 };
 
