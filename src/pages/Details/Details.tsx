@@ -1,5 +1,8 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext, useRef } from "react";
 import { useParams } from "react-router-dom";
+
+//Assets
+import load_icon from "../../assets/img/load-icon.png";
 
 //Components
 import Footer from "../../components/Footer/Footer";
@@ -18,6 +21,9 @@ const Details = () => {
 
     const { setLoading } = useContext(LoadingContext);
 
+    const loadingRef = useRef<HTMLDivElement>(null);
+    const imgRef = useRef<HTMLImageElement>(null);
+
     const [movieDetails, setMovieDetails] = useState<any>();
 
     useEffect(() => {
@@ -27,13 +33,17 @@ const Details = () => {
             );
 
             setMovieDetails(movieDetails);
-            console.log(movieDetails);
         }
 
         setLoading(true);
         fetchMovieDetails();
         setLoading(false);
     }, []);
+
+    function handleImgLoad() {
+        loadingRef.current!.style.display = "none";
+        imgRef.current!.style.display = "flex";
+    }
 
     return (
         <div>
@@ -43,9 +53,18 @@ const Details = () => {
                         <div className={style.details_body}>
                             <div className={style.centralize}>
                                 <div className={style.details_img}>
+                                    <div
+                                        className={style.loading}
+                                        ref={loadingRef}
+                                    >
+                                        <img src={load_icon} />
+                                    </div>
                                     <img
+                                        ref={imgRef}
                                         src={`https://image.tmdb.org/t/p/w400${movieDetails.poster_path}`}
                                         alt={movieDetails.title}
+                                        onLoad={handleImgLoad}
+                                        onError={handleImgLoad}
                                     />
                                 </div>
                                 <div className={style.details_infos}>
@@ -87,6 +106,7 @@ const Details = () => {
                                                         name: string;
                                                     }) => (
                                                         <span
+                                                            key={genre.name}
                                                             className={
                                                                 style.genre
                                                             }

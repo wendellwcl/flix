@@ -28,14 +28,39 @@
     padding: 1em;
     max-height: calc(100vh - $header-height);
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 2/3;
 
-    img {
-        display: block;
-        aspect-ratio: 3/4;
+    .loading {
+        max-width: 400px;
+        width: 100%;
+        aspect-ratio: 2/3;
+        background-color: #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1em;
+
+        img {
+            @include loading_animation;
+            display: block;
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    > img {
+        aspect-ratio: 2/3;
         max-height: 100%;
         max-width: 100%;
         margin: 0 auto;
         border-radius: 1em;
+        background-color: #ccc;
+        display: none;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -75,7 +100,7 @@
                 content: ",";
                 position: absolute;
                 right: 3px;
-                bottom: 0;
+                bottom: 1px;
             }
         }
     }
