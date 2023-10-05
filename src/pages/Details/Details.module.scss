@@ -1,0 +1,82 @@
+@import "../../styles/partials/variables";
+@import "../../styles/mixins/mixins";
+
+.details_container {
+    min-height: calc(100vh - $header-height);
+}
+
+.details_body {
+    @include container_default;
+    min-height: calc(100vh - $header-height);
+    display: flex;
+    align-items: center;
+
+    .centralize {
+        width: 100%;
+        padding: 1em;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2em;
+
+        > * {
+            flex: 1 1 400px;
+        }
+    }
+}
+
+.details_img {
+    padding: 1em;
+    max-height: calc(100vh - $header-height);
+    width: 100%;
+
+    img {
+        display: block;
+        aspect-ratio: 3/4;
+        max-height: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        border-radius: 1em;
+    }
+}
+
+.details_infos {
+    padding: 1em;
+    margin-bottom: 2em;
+}
+
+.details_title {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.details_tagline {
+    color: $color-main;
+    font-weight: bold;
+    margin-bottom: 1.5em;
+}
+
+.details_overview {
+    margin-bottom: 2em;
+}
+
+.details_runtime,
+.details_average,
+.details_genres {
+    color: $color-gray-2;
+    margin-bottom: 0.5em;
+
+    span {
+        color: $color-main;
+        font-weight: bold;
+        position: relative;
+
+        .genre:not(:last-child) {
+            &::before {
+                content: ",";
+                position: absolute;
+                right: 3px;
+                bottom: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,78 @@
+.details_container {
+  min-height: calc(100vh - 68.8px);
+}
+
+.details_body {
+  width: 100vw;
+  max-width: 1140px;
+  margin: 0 auto;
+  min-height: calc(100vh - 68.8px);
+  display: flex;
+  align-items: center;
+}
+.details_body .centralize {
+  width: 100%;
+  padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+.details_body .centralize > * {
+  flex: 1 1 400px;
+}
+
+.details_img {
+  padding: 1em;
+  max-height: calc(100vh - 68.8px);
+  width: 100%;
+}
+.details_img img {
+  display: block;
+  aspect-ratio: 3/4;
+  max-height: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: 1em;
+}
+
+.details_infos {
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+.details_title {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.details_tagline {
+  color: #db413b;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+}
+
+.details_overview {
+  margin-bottom: 2em;
+}
+
+.details_runtime,
+.details_average,
+.details_genres {
+  color: #524e4e;
+  margin-bottom: 0.5em;
+}
+.details_runtime span,
+.details_average span,
+.details_genres span {
+  color: #db413b;
+  font-weight: bold;
+  position: relative;
+}
+.details_runtime span .genre:not(:last-child)::before,
+.details_average span .genre:not(:last-child)::before,
+.details_genres span .genre:not(:last-child)::before {
+  content: ",";
+  position: absolute;
+  right: 3px;
+  bottom: 0;
+}/*# sourceMappingURL=Details.module.css.map */
