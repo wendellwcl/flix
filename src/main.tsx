@@ -10,7 +10,6 @@ import MoviesContextProvider from "./contexts/MoviesContext";
 import Root from "./Root";
 import Home from "./pages/Home/Home";
 import Results from "./pages/Results/Results";
-import Credits from "./pages/Credits/Credits";
 import Details from "./pages/Details/Details";
 import NotFound from "./pages/NotFound/NotFound";
 
@@ -30,10 +29,6 @@ const router = createBrowserRouter([
             {
                 path: "results/:query/:apiEndpoint/:page?",
                 element: <Results />,
-            },
-            {
-                path: "credits",
-                element: <Credits />,
             },
             {
                 path: "details/:id",
