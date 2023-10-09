@@ -6,34 +6,7 @@
   min-height: calc(100vh - 68.8px);
 }
 
-.results_header {
-  margin-bottom: 1.5em;
-}
-.results_header .results_title {
-  font-size: 1.2em;
-}
-.results_header .results_title span {
-  font-size: 1.2em;
-  color: #db413b;
-}
-
 .results_body .noResults_msg {
   font-size: 1.1em;
   text-align: center;
-}
-
-.results_list {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2em 1em;
-  width: 100%;
-  padding: 1em;
-}
-@media screen and (max-width: 480px) {
-  .results_list {
-    padding: 1em 2em;
-  }
 }/*# sourceMappingURL=Results.module.css.map */

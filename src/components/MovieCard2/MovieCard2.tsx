@@ -15,8 +15,8 @@ const MovieCard2 = ({ movie }: Props) => {
     const [date, setDate] = useState<string>(movie.release_date);
 
     useEffect(() => {
-        const d = new Date(movie.release_date).toLocaleDateString("pt-BR");
-        setDate(d);
+        const date = new Date(movie.release_date).toLocaleDateString("pt-BR");
+        setDate(date);
     }, [movie]);
 
     return (
@@ -25,9 +25,10 @@ const MovieCard2 = ({ movie }: Props) => {
                 <img
                     src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
                     alt={movie.title}
+                    loading="lazy"
                 />
             </div>
-            <div className={style.date}>{date}</div>
+            <span className={style.date}>{date}</span>
         </Link>
     );
 };

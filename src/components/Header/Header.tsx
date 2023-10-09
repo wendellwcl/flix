@@ -39,13 +39,6 @@ const Header = () => {
                         <Link to={`/`}>flix</Link>
                     </h1>
                 </div>
-                <nav className={style.navbar}>
-                    <ul>
-                        <li>
-                            <Link to={`credits`}>Créditos</Link>
-                        </li>
-                    </ul>
-                </nav>
             </div>
         </header>
     );

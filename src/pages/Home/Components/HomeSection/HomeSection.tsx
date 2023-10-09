@@ -15,8 +15,8 @@ const HomeSection = ({ title, subtitle, endpoint, children }: Props) => {
     const encodedTitle = title.replaceAll(" ", "+");
 
     return (
-        <section className={style.section_container}>
-            <div className={style.section_body}>
+        <section className={style.section_area}>
+            <div className={style.section_container}>
                 <div className={style.section_header}>
                     <div className={style.section_title_container}>
                         <h3 className={style.section_title}>{title}</h3>

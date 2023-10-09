@@ -1,7 +1,7 @@
 @import "../../../../styles/partials/variables";
 @import "../../../../styles//mixins/mixins";
 
-.section_container {
+.section_area {
     min-height: calc(100vh - $header-height);
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@
     padding: 2em;
 }
 
-.section_body {
+.section_container {
     @include container_default;
     width: 100%;
     padding: 2em;

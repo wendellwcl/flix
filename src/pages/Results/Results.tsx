@@ -1,10 +1,11 @@
 import { useEffect, useState, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 //Components
-import MovieCardDefault from "../../components/MovieCardDefault/MovieCardDefault";
+import ResultsHeader from "./components/ResultsHeader/ResultsHeader";
+import Pagination from "./components/Pagination/Pagination";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
-import Pagination from "./Components/Pagination/Pagination";
+import Footer from "../../components/Footer/Footer";
 
 //Contexts
 import { LoadingContext } from "../../contexts/LoadingContext";
@@ -17,9 +18,10 @@ import fetchTMDBconfig from "../../utils/fetchTMDBconfig";
 
 //Style
 import style from "./Results.module.css";
-import Footer from "../../components/Footer/Footer";
+import ResultsList from "./components/ResultsList/ResultsList";
 
 const Results = () => {
+    const navigate = useNavigate();
     const { query, apiEndpoint, page } = useParams();
 
     const decodedQuery = query!.replaceAll("+", " ");
@@ -29,20 +31,24 @@ const Results = () => {
 
     const { loading, setLoading } = useContext(LoadingContext);
 
-    const [moviesList, setMoviesList] = useState<IMovie[]>();
-    const [totalPages, setTotalPages] = useState<number>();
+    const [resultsList, setResultsList] = useState<IMovie[]>();
+    const [totalPages, setTotalPages] = useState<number>(1);
     const [noResults, setNoResults] = useState<boolean>(false);
 
     useEffect(() => {
-        async function fetchMoviesList() {
+        async function fetchResultsList() {
             const data = await fetchTMDBconfig(
                 `${decodedApiEndpoint}&page=${currentPage}`
             );
 
-            if (data.total_results === 0) {
+            if (data.results.length === 0) {
+                navigate("/*", { relative: "path" });
+                return;
+            } else if (data.total_results === 0) {
                 setNoResults(true);
+                return;
             } else {
-                setMoviesList(data.results);
+                setResultsList(data.results);
                 setTotalPages(data.total_pages);
             }
         }
@@ -50,13 +56,10 @@ const Results = () => {
         async function handleFetch() {
             setLoading(true);
 
-            await fetchMoviesList();
+            window.scroll(0, 0);
+            await fetchResultsList();
 
-            window.scrollTo(0, 0);
-
-            setTimeout(() => {
-                setLoading(false);
-            }, 200);
+            setLoading(false);
         }
 
         handleFetch();
@@ -64,36 +67,24 @@ const Results = () => {
 
     return (
         <>
-            {loading && <LoadingScreen />}
-            {!loading && (
+            {loading ? (
+                <LoadingScreen />
+            ) : (
                 <>
                     <div className={style.results_container}>
-                        <div className={style.results_header}>
-                            <h2 className={style.results_title}>
-                                Resultados para:
-                                <span> "{decodedQuery}"</span>
-                            </h2>
-                        </div>
+                        <ResultsHeader query={decodedQuery} />
+
                         <div className={style.results_body}>
-                            {noResults && (
+                            {noResults ? (
                                 <p className={style.noResults_msg}>
                                     Sem resultados
                                 </p>
-                            )}
-                            {!noResults && (
+                            ) : (
                                 <>
-                                    <div className={style.results_list}>
-                                        {moviesList &&
-                                            moviesList.map((movie) => (
-                                                <MovieCardDefault
-                                                    key={movie.id}
-                                                    movie={movie}
-                                                />
-                                            ))}
-                                    </div>
+                                    <ResultsList resultsList={resultsList!} />
                                     <Pagination
                                         pageNumber={currentPage}
-                                        query={query}
+                                        query={query!}
                                         encodedApiEndpoint={encodedApiEndpoint}
                                         totalPages={totalPages}
                                     />

@@ -9,12 +9,12 @@ interface ILoadingContext {
     setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const LoadingContext = createContext<ILoadingContext>({
+const defaultValue = {
     loading: true,
-    setLoading: () => {
-        return;
-    },
-});
+    setLoading: () => {},
+};
+
+export const LoadingContext = createContext<ILoadingContext>(defaultValue);
 
 const LoadingContextProvider = ({ children }: Props) => {
     const [loading, setLoading] = useState<boolean>(true);

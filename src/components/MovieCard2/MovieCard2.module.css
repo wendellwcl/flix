@@ -17,14 +17,18 @@
 }
 .card_container .card_img {
   width: 100%;
-  aspect-ratio: 3/4;
+  aspect-ratio: 2/3;
 }
 .card_container .card_img img {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   aspect-ratio: inherit;
+  text-align: center;
 }
 .card_container .date {
+  display: block;
   padding: 0.75em 0;
   font-size: 0.9em;
   font-weight: bold;

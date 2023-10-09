@@ -5,9 +5,9 @@ import style from "./Pagination.module.css";
 
 interface Props {
     pageNumber: number;
-    query: string | undefined;
+    query: string;
     encodedApiEndpoint: string;
-    totalPages: number | undefined;
+    totalPages: number;
 }
 
 const Pagination = ({
@@ -19,6 +19,7 @@ const Pagination = ({
     const navigate = useNavigate();
 
     function handlePrevPage() {
+        console.log(totalPages);
         if (pageNumber > 1) {
             navigate(
                 `/results/${query}/${encodedApiEndpoint}/${pageNumber - 1}`,
@@ -28,7 +29,7 @@ const Pagination = ({
     }
 
     function handleNextPage() {
-        if (pageNumber < totalPages! && pageNumber < 500) {
+        if (pageNumber < totalPages && pageNumber < 500) {
             navigate(
                 `/results/${query}/${encodedApiEndpoint}/${pageNumber + 1}`,
                 { relative: "path" }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 //Styles
@@ -7,18 +7,24 @@ import style from "./Landing.module.css";
 const Landing = () => {
     const navigate = useNavigate();
 
+    const inputRef = useRef<HTMLInputElement>(null);
+
     const [searchQuery, setSearchQuery] = useState<string>("");
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
-        const encodedSearchQuery = searchQuery.replaceAll(" ", "+");
-        const endpoint = `search/movie?query=${encodedSearchQuery}&include_adult=false&language=pt-BR`;
-        const encodedEndpoint = encodeURIComponent(endpoint);
+        if (searchQuery !== "") {
+            const encodedSearchQuery = searchQuery.replaceAll(" ", "+");
+            const endpoint = `search/movie?query=${encodedSearchQuery}&include_adult=false&language=pt-BR`;
+            const encodedEndpoint = encodeURIComponent(endpoint);
 
-        navigate(`/results/${encodedSearchQuery}/${encodedEndpoint}`, {
-            relative: "path",
-        });
+            navigate(`/results/${encodedSearchQuery}/${encodedEndpoint}`, {
+                relative: "path",
+            });
+        } else {
+            inputRef.current!.placeholder = "Preencha este campo";
+        }
     }
 
     return (
@@ -41,6 +47,7 @@ const Landing = () => {
                             placeholder="Pesquisar um filme"
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
+                            ref={inputRef}
                         />
                         <button type="submit">Pesquisar</button>
                     </div>

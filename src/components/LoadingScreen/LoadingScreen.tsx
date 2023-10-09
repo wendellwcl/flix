@@ -1,3 +1,4 @@
+//Style
 import style from "./LoadingScreen.module.css";
 
 const LoadingScreen = () => {

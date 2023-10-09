@@ -1,110 +1,19 @@
-.details_container {
+.details_area {
   min-height: calc(100vh - 68.8px);
 }
 
-.details_body {
+.details_container {
   width: 100vw;
   max-width: 1140px;
   margin: 0 auto;
   min-height: calc(100vh - 68.8px);
+  width: 100%;
   display: flex;
   align-items: center;
-}
-.details_body .centralize {
-  width: 100%;
-  padding: 1em;
-  display: flex;
   flex-wrap: wrap;
   gap: 2em;
+  padding: 1em;
 }
-.details_body .centralize > * {
+.details_container > * {
   flex: 1 1 400px;
-}
-
-.details_img {
-  padding: 1em;
-  max-height: calc(100vh - 68.8px);
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  aspect-ratio: 2/3;
-}
-.details_img .loading {
-  max-width: 400px;
-  width: 100%;
-  aspect-ratio: 2/3;
-  background-color: #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 1em;
-}
-.details_img .loading img {
-  animation: loading_animation 2s linear infinite;
-  display: block;
-  width: 50px;
-  height: 50px;
-}
-@keyframes loading_animation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.details_img > img {
-  aspect-ratio: 2/3;
-  max-height: 100%;
-  max-width: 400px;
-  width: 100%;
-  margin: 0 auto;
-  border-radius: 1em;
-  background-color: #ccc;
-  display: none;
-  align-items: center;
-  justify-content: center;
-}
-
-.details_infos {
-  padding: 1em;
-  margin-bottom: 2em;
-}
-
-.details_title {
-  font-size: 1.5em;
-  margin-bottom: 0.5em;
-}
-
-.details_tagline {
-  color: #db413b;
-  font-weight: bold;
-  margin-bottom: 1.5em;
-}
-
-.details_overview {
-  margin-bottom: 2em;
-}
-
-.details_runtime,
-.details_average,
-.details_genres {
-  color: #524e4e;
-  margin-bottom: 0.5em;
-}
-.details_runtime span,
-.details_average span,
-.details_genres span {
-  color: #db413b;
-  font-weight: bold;
-  position: relative;
-}
-.details_runtime span .genre:not(:last-child)::before,
-.details_average span .genre:not(:last-child)::before,
-.details_genres span .genre:not(:last-child)::before {
-  content: ",";
-  position: absolute;
-  right: 3px;
-  bottom: 1px;
 }/*# sourceMappingURL=Details.module.css.map */

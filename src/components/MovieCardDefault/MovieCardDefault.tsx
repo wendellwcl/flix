@@ -18,9 +18,10 @@ interface Props {
 }
 
 const MovieCardDefault = ({ movie }: Props) => {
-    const elRef = useRef<HTMLImageElement>(null);
-    const loadingRef = useRef<HTMLDivElement>(null);
     const { genres } = useContext(MoviesContext);
+
+    const imgRef = useRef<HTMLImageElement>(null);
+    const loadingRef = useRef<HTMLDivElement>(null);
 
     const [movieGenre, setMovieGenre] = useState<string | null>(null);
 
@@ -29,16 +30,16 @@ const MovieCardDefault = ({ movie }: Props) => {
             return genre.id === movie.genre_ids[0];
         }
 
-        const genre = genres.filter(filterGenre);
+        const genresList = genres.filter(filterGenre);
 
-        if (genre.length != 0) {
-            setMovieGenre(genre[0].name);
+        if (genresList.length != 0) {
+            setMovieGenre(genresList[0].name);
         }
     }, [movie]);
 
     function handleImgLoad() {
-        loadingRef.current!.style.display = "none";
-        elRef.current!.style.display = "flex";
+        imgRef.current!.style.display = "flex";
+        loadingRef.current!.remove();
     }
 
     return (
@@ -49,17 +50,18 @@ const MovieCardDefault = ({ movie }: Props) => {
                         <img src={load_icon} />
                     </div>
                     <img
-                        ref={elRef}
+                        ref={imgRef}
                         src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
                         alt={movie.title}
+                        loading="lazy"
                         onLoad={handleImgLoad}
                         onError={handleImgLoad}
                     />
                 </Link>
             </div>
             <div className={style.info_container}>
-                <span className={style.title}>{movie.title}</span>
-                <span className={style.genre}>{movieGenre || "---"}</span>
+                <h6 className={style.title}>{movie.title}</h6>
+                <span className={style.genre}>{movieGenre || "-"}</span>
                 <Link to={`/details/${movie.id}`} relative="path">
                     Mais Sobre
                 </Link>

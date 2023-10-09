@@ -17,9 +17,6 @@
 
 .header_container {
     @include container_default;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding: 0 2em;
 }
 
@@ -29,21 +26,5 @@
         text-transform: uppercase;
         letter-spacing: 2px;
         margin: 0;
-    }
-}
-
-.navbar {
-    ul {
-        display: flex;
-        align-items: center;
-    }
-
-    a {
-        font-weight: bold;
-
-        &:hover {
-            transition: all 0.2s;
-            color: $color-light-1;
-        }
     }
 }

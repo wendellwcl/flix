@@ -1,0 +1,15 @@
+.results_list {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2em 1em;
+  width: 100%;
+  padding: 1em;
+}
+@media screen and (max-width: 480px) {
+  .results_list {
+    padding: 1em 2em;
+  }
+}/*# sourceMappingURL=ResultsList.module.css.map */

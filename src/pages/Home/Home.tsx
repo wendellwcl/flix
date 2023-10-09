@@ -1,9 +1,9 @@
 import { useContext } from "react";
 
 //Components
-import HomeSection from "./Components/HomeSection/HomeSection";
+import Landing from "./components/Landing/Landing";
+import HomeSection from "./components/HomeSection/HomeSection";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
-import Landing from "./Components/Landing/Landing";
 import Footer from "../../components/Footer/Footer";
 import MovieCardDefault from "../../components/MovieCardDefault/MovieCardDefault";
 import MovieCard2 from "../../components/MovieCard2/MovieCard2";
@@ -23,8 +23,9 @@ const Home = () => {
 
     return (
         <>
-            {loading && <LoadingScreen />}
-            {!loading && (
+            {loading ? (
+                <LoadingScreen />
+            ) : (
                 <main className={style.home}>
                     <Landing />
                     <HomeSection

@@ -1,0 +1,22 @@
+@import "../../../../../../styles/partials/variables";
+
+.micro_info {
+    color: $color-gray-2;
+    margin-bottom: 0.5em;
+
+    span {
+        color: $color-main;
+        font-weight: bold;
+    }
+
+    .info_item:not(:last-child) {
+        position: relative;
+
+        &::before {
+            content: ",";
+            position: absolute;
+            right: 3px;
+            bottom: 1px;
+        }
+    }
+}

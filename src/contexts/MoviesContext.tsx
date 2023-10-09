@@ -26,12 +26,14 @@ interface IMoviesContext {
     genres: IGenre[];
 }
 
-export const MoviesContext = createContext<IMoviesContext>({
+const defaultValue = {
     trending: [],
     topRated: [],
     upcoming: [],
     genres: [],
-});
+};
+
+export const MoviesContext = createContext<IMoviesContext>(defaultValue);
 
 const MoviesContextProvider = ({ children }: Props) => {
     const { setLoading } = useContext(LoadingContext);

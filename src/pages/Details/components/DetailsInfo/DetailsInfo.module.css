@@ -1,0 +1,19 @@
+.details_infos {
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+.details_title {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.details_tagline {
+  color: #db413b;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+}
+
+.details_overview {
+  margin-bottom: 2em;
+}/*# sourceMappingURL=DetailsInfo.module.css.map */

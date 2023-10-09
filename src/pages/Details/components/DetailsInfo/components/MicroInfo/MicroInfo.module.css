@@ -1,0 +1,17 @@
+.micro_info {
+  color: #524e4e;
+  margin-bottom: 0.5em;
+}
+.micro_info span {
+  color: #db413b;
+  font-weight: bold;
+}
+.micro_info .info_item:not(:last-child) {
+  position: relative;
+}
+.micro_info .info_item:not(:last-child)::before {
+  content: ",";
+  position: absolute;
+  right: 3px;
+  bottom: 1px;
+}/*# sourceMappingURL=MicroInfo.module.css.map */

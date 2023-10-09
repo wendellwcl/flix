@@ -1,0 +1,10 @@
+.results_header {
+  margin-bottom: 1.5em;
+}
+.results_header .results_title {
+  font-size: 1.2em;
+}
+.results_header .results_title span {
+  font-size: 1.2em;
+  color: #db413b;
+}/*# sourceMappingURL=ResultsHeader.module.css.map */
