@@ -19,7 +19,6 @@ const Pagination = ({
     const navigate = useNavigate();
 
     function handlePrevPage() {
-        console.log(totalPages);
         if (pageNumber > 1) {
             navigate(
                 `/results/${query}/${encodedApiEndpoint}/${pageNumber - 1}`,
