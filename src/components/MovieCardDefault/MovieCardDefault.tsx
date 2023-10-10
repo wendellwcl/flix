@@ -51,7 +51,11 @@ const MovieCardDefault = ({ movie }: Props) => {
                     </div>
                     <img
                         ref={imgRef}
-                        src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+                        src={
+                            movie.poster_path
+                                ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`
+                                : "#"
+                        }
                         alt={movie.title}
                         loading="lazy"
                         onLoad={handleImgLoad}
