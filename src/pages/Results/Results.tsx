@@ -22,6 +22,7 @@ import ResultsList from "./components/ResultsList/ResultsList";
 
 const Results = () => {
     const navigate = useNavigate();
+
     const { query, apiEndpoint, page } = useParams();
 
     const decodedQuery = query!.replaceAll("+", " ");
@@ -42,11 +43,14 @@ const Results = () => {
             );
 
             if (data.results.length === 0) {
-                navigate("/*", { relative: "path" });
-                return;
-            } else if (data.total_results === 0) {
-                setNoResults(true);
-                return;
+                if (data.page === 1 && data.total_pages === 1) {
+                    setNoResults(true);
+                } else if (data.page > 1) {
+                    navigate(
+                        `/results/${query}/${encodedApiEndpoint}/${data.total_pages}`,
+                        { relative: "path" }
+                    );
+                }
             } else {
                 setResultsList(data.results);
                 setTotalPages(data.total_pages);
