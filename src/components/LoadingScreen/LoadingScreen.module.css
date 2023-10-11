@@ -4,8 +4,17 @@
   align-items: center;
   justify-content: center;
 }
-.loading_container span {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #db413b;
+.loading_container .load_img {
+  animation: loading_animation 2s linear infinite;
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+@keyframes loading_animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }/*# sourceMappingURL=LoadingScreen.module.css.map */

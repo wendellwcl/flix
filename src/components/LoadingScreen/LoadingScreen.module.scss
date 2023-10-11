@@ -7,9 +7,10 @@
     align-items: center;
     justify-content: center;
 
-    span {
-        font-size: 1.5em;
-        font-weight: bold;
-        color: $color-main;
+    .load_img {
+        @include loading_animation;
+        width: 50px;
+        height: 50px;
+        display: block;
     }
 }
