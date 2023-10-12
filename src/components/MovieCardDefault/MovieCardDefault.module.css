@@ -25,40 +25,17 @@
   border-radius: 1em;
   overflow: hidden;
   background-color: #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-.img_container .loading {
-  animation: loading_animation 2s linear infinite;
-  width: 30px;
-  height: 30px;
-}
-@keyframes loading_animation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.img_container .loading img {
+.img_container a {
   display: block;
   width: 100%;
   height: 100%;
-}
-.img_container a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: #524e4e;
 }
 .img_container img {
   width: 100%;
+  height: 100%;
   aspect-ratio: 2/3;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
   display: none;
   align-items: center;
   justify-content: center;

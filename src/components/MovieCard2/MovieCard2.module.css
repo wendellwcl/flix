@@ -20,7 +20,7 @@
   aspect-ratio: 2/3;
 }
 .card_container .card_img img {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 100%;

@@ -1,14 +1,14 @@
-import { useContext, useEffect, useState, useRef } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
-//Assets
-import load_icon from "../../assets/img/load-icon.png";
 
 //Context
 import { MoviesContext } from "../../contexts/MoviesContext";
 
 //Interfaces
 import { IMovie } from "../../interfaces/interfaces";
+
+//Utils
+import imgLoadingPlaceholder from "../../utils/imgLoadingPlaceholder";
 
 //Style
 import style from "./MovieCardDefault.module.css";
@@ -19,9 +19,6 @@ interface Props {
 
 const MovieCardDefault = ({ movie }: Props) => {
     const { genres } = useContext(MoviesContext);
-
-    const imgRef = useRef<HTMLImageElement>(null);
-    const loadingRef = useRef<HTMLDivElement>(null);
 
     const [movieGenre, setMovieGenre] = useState<string | null>(null);
 
@@ -37,20 +34,12 @@ const MovieCardDefault = ({ movie }: Props) => {
         }
     }, [movie]);
 
-    function handleImgLoad() {
-        imgRef.current!.style.display = "flex";
-        loadingRef.current!.remove();
-    }
-
     return (
         <div className={style.card_container}>
             <div className={style.img_container}>
                 <Link to={`/details/${movie.id}`} relative="path">
-                    <div className={style.loading} ref={loadingRef}>
-                        <img src={load_icon} />
-                    </div>
+                    <div className="loading_placeholder"></div>
                     <img
-                        ref={imgRef}
                         src={
                             movie.poster_path
                                 ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`
@@ -58,8 +47,8 @@ const MovieCardDefault = ({ movie }: Props) => {
                         }
                         alt={movie.title}
                         loading="lazy"
-                        onLoad={handleImgLoad}
-                        onError={handleImgLoad}
+                        onLoad={(e) => imgLoadingPlaceholder(e.currentTarget)}
+                        onError={(e) => imgLoadingPlaceholder(e.currentTarget)}
                     />
                 </Link>
             </div>

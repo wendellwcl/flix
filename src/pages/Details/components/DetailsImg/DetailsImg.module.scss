@@ -1,43 +1,28 @@
 @import "../../../../styles/partials/variables";
 @import "../../../../styles/mixins/mixins";
 
-.details_img {
-    padding: 1em;
+.details_img_container {
     max-height: calc(100vh - $header-height);
     width: 100%;
+    padding: 1em;
     display: flex;
     align-items: center;
     justify-content: center;
-    aspect-ratio: 2/3;
 
-    .loading {
-        max-width: 400px;
+    .details_img {
         width: 100%;
+        max-width: 400px;
         aspect-ratio: 2/3;
         background-color: #ccc;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         border-radius: 1em;
+        overflow: hidden;
 
         img {
-            @include loading_animation;
-            display: block;
-            width: 50px;
-            height: 50px;
+            display: none;
+            width: 100%;
+            aspect-ratio: 2/3;
+            align-items: center;
+            justify-content: center;
         }
-    }
-
-    > img {
-        aspect-ratio: 2/3;
-        max-height: 100%;
-        max-width: 400px;
-        width: 100%;
-        margin: 0 auto;
-        border-radius: 1em;
-        background-color: #ccc;
-        display: none;
-        align-items: center;
-        justify-content: center;
     }
 }

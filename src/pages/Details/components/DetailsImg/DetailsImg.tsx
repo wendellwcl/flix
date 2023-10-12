@@ -1,7 +1,5 @@
-import { useRef } from "react";
-
-//Assets
-import load_icon from "../../../../assets/img/load-icon.png";
+//Utils
+import imgLoadingPlaceholder from "../../../../utils/imgLoadingPlaceholder";
 
 //Style
 import style from "./DetailsImg.module.css";
@@ -11,26 +9,21 @@ interface Props {
 }
 
 const DetailsImg = ({ movieDetails }: Props) => {
-    const loadingRef = useRef<HTMLDivElement>(null);
-    const imgRef = useRef<HTMLImageElement>(null);
-
-    function handleImgLoad() {
-        loadingRef.current!.style.display = "none";
-        imgRef.current!.style.display = "flex";
-    }
-
     return (
-        <div className={style.details_img}>
-            <div className={style.loading} ref={loadingRef}>
-                <img src={load_icon} />
+        <div className={style.details_img_container}>
+            <div className={style.details_img}>
+                <div className="loading_placeholder"></div>
+                <img
+                    src={
+                        movieDetails.poster_path
+                            ? `https://image.tmdb.org/t/p/w400${movieDetails.poster_path}`
+                            : "#"
+                    }
+                    alt={movieDetails.title}
+                    onLoad={(e) => imgLoadingPlaceholder(e.currentTarget)}
+                    onError={(e) => imgLoadingPlaceholder(e.currentTarget)}
+                />
             </div>
-            <img
-                ref={imgRef}
-                src={`https://image.tmdb.org/t/p/w400${movieDetails.poster_path}`}
-                alt={movieDetails.title}
-                onLoad={handleImgLoad}
-                onError={handleImgLoad}
-            />
         </div>
     );
 };
