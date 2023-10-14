@@ -14,7 +14,9 @@ const Landing = () => {
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
-        if (searchQuery !== "") {
+        const query = searchQuery.trim();
+
+        if (query !== "") {
             const encodedSearchQuery = searchQuery.replaceAll(" ", "+");
             const endpoint = `search/movie?query=${encodedSearchQuery}&include_adult=false&language=pt-BR`;
             const encodedEndpoint = encodeURIComponent(endpoint);
@@ -23,6 +25,7 @@ const Landing = () => {
                 relative: "path",
             });
         } else {
+            setSearchQuery("");
             inputRef.current!.placeholder = "Preencha este campo";
         }
     }
