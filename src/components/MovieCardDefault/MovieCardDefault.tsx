@@ -32,7 +32,7 @@ const MovieCardDefault = ({ movie }: Props) => {
         if (genresList.length != 0) {
             setMovieGenre(genresList[0].name);
         }
-    }, [movie]);
+    }, [movie, genres]);
 
     return (
         <div className={style.card_container}>
