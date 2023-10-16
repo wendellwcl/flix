@@ -12,6 +12,7 @@ import Home from "./pages/Home/Home";
 import Results from "./pages/Results/Results";
 import Details from "./pages/Details/Details";
 import NotFound from "./pages/NotFound/NotFound";
+import ErrorPage from "./pages/ErrorPage/ErrorPage";
 
 //Style
 import "normalize.css";
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
             {
                 path: "details/:id",
                 element: <Details />,
+            },
+            {
+                path: "error",
+                element: <ErrorPage />,
             },
             {
                 path: "*",
