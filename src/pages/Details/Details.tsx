@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 //Components
 import DetailsImg from "./components/DetailsImg/DetailsImg";
@@ -17,6 +17,8 @@ import fetchTMDBconfig from "../../utils/fetchTMDBconfig";
 import style from "./Details.module.css";
 
 const Details = () => {
+    const navigate = useNavigate();
+
     const { id } = useParams();
 
     const { loading, setLoading } = useContext(LoadingContext);
@@ -28,6 +30,14 @@ const Details = () => {
             const movieDetails = await fetchTMDBconfig(
                 `movie/${id}?language=pt-BR`
             );
+
+            if (movieDetails.error) {
+                console.error(movieDetails.error);
+
+                const url = movieDetails.error.message.replaceAll(" ", "+");
+                navigate(`/error/${url}`, { relative: "path" });
+                return;
+            }
 
             setMovieDetails(movieDetails);
         }

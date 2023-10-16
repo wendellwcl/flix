@@ -42,6 +42,14 @@ const Results = () => {
                 `${decodedApiEndpoint}&page=${currentPage}`
             );
 
+            if (data.error) {
+                console.error(data.error);
+
+                const url = data.error.message.replaceAll(" ", "+");
+                navigate(`/error/${url}`, { relative: "path" });
+                return;
+            }
+
             if (data.results.length === 0) {
                 if (data.page === 1 && data.total_pages === 1) {
                     setNoResults(true);

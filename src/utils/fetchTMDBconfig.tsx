@@ -14,14 +14,18 @@ async function fetchTMDBconfig(endpoint: string): Promise<any> {
         const response = await fetch(url, options);
 
         if (response.status != 200) {
-            throw new Error("Ops! Algo deu errado");
+            throw new Error("Ops! Algo deu errado com sua requisição");
         }
 
         const data = await response.json();
 
         return data;
     } catch (err) {
-        console.log(err);
+        const errorObj = {
+            error: err,
+        };
+
+        return errorObj;
     }
 }
 
