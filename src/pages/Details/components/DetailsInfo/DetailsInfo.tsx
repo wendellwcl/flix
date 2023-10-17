@@ -36,22 +36,11 @@ const DetailsInfo = ({ movieDetails }: Props) => {
                     unity="min"
                 />
             )}
-            {movieDetails.vote_average && (
+            {movieDetails.vote_average != undefined && (
                 <MicroInfo text="Nota" value={movieDetails.vote_average} />
             )}
             {movieDetails.genres.length > 0 && (
                 <MicroInfo text="Gêneros" value={movieDetails.genres} />
-                // <p className={style.details_genres}>
-                //     Gêneros:&nbsp;
-                //     <span>
-                //         {movieDetails.genres.map((genre: { name: string }) => (
-                //             <span key={genre.name} className={style.genre}>
-                //                 {genre.name}
-                //                 &nbsp;&nbsp;
-                //             </span>
-                //         ))}
-                //     </span>
-                // </p>
             )}
         </div>
     );
