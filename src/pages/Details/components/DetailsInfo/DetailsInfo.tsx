@@ -29,7 +29,7 @@ const DetailsInfo = ({ movieDetails }: Props) => {
                     {movieDetails.overview}
                 </p>
             )}
-            {movieDetails.runtime && (
+            {movieDetails.runtime != undefined && (
                 <MicroInfo
                     text="Duração"
                     value={movieDetails.runtime}
