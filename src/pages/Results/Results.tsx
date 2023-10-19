@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 //Components
@@ -6,9 +6,6 @@ import ResultsHeader from "./components/ResultsHeader/ResultsHeader";
 import Pagination from "./components/Pagination/Pagination";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
 import Footer from "../../components/Footer/Footer";
-
-//Contexts
-import { LoadingContext } from "../../contexts/LoadingContext";
 
 //Interfaces
 import { IMovie } from "../../interfaces/interfaces";
@@ -30,7 +27,7 @@ const Results = () => {
     const decodedApiEndpoint = decodeURIComponent(apiEndpoint!);
     const currentPage = page ? Number(page) : 1;
 
-    const { loading, setLoading } = useContext(LoadingContext);
+    const [loading, setLoading] = useState<boolean>(true);
 
     const [resultsList, setResultsList] = useState<IMovie[]>();
     const [totalPages, setTotalPages] = useState<number>(1);
@@ -65,7 +62,7 @@ const Results = () => {
             }
         }
 
-        async function handleFetch() {
+        async function fetchMovies() {
             setLoading(true);
 
             window.scroll(0, 0);
@@ -74,7 +71,7 @@ const Results = () => {
             setLoading(false);
         }
 
-        handleFetch();
+        fetchMovies();
     }, [decodedApiEndpoint, currentPage]);
 
     return (

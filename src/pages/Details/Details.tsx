@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 //Components
@@ -6,9 +6,6 @@ import DetailsImg from "./components/DetailsImg/DetailsImg";
 import DetailsInfo from "./components/DetailsInfo/DetailsInfo";
 import Footer from "../../components/Footer/Footer";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
-
-//Contexts
-import { LoadingContext } from "../../contexts/LoadingContext";
 
 //Utils
 import fetchTMDBconfig from "../../utils/fetchTMDBconfig";
@@ -21,7 +18,7 @@ const Details = () => {
 
     const { id } = useParams();
 
-    const { loading, setLoading } = useContext(LoadingContext);
+    const [loading, setLoading] = useState<boolean>(true);
 
     const [movieDetails, setMovieDetails] = useState<any>();
 
@@ -40,17 +37,11 @@ const Details = () => {
             }
 
             setMovieDetails(movieDetails);
-        }
-
-        async function handleFetch() {
-            setLoading(true);
-
-            await fetchMovieDetails();
 
             setLoading(false);
         }
 
-        handleFetch();
+        fetchMovieDetails();
     }, []);
 
     return (

@@ -1,13 +1,4 @@
-import {
-    ReactElement,
-    createContext,
-    useEffect,
-    useState,
-    useContext,
-} from "react";
-
-//Contexts
-import { LoadingContext } from "./LoadingContext";
+import { ReactElement, createContext, useEffect, useState } from "react";
 
 //Interfaces
 import { IMovie, IGenre } from "../interfaces/interfaces";
@@ -36,16 +27,12 @@ const defaultValue = {
 export const MoviesContext = createContext<IMoviesContext>(defaultValue);
 
 const MoviesContextProvider = ({ children }: Props) => {
-    const { setLoading } = useContext(LoadingContext);
-
     const [trending, setTrending] = useState<IMovie[]>([]);
     const [topRated, setTopRated] = useState<IMovie[]>([]);
     const [upcoming, setUpcoming] = useState<IMovie[]>([]);
     const [genres, setGenres] = useState<IGenre[]>([]);
 
     useEffect(() => {
-        setLoading(true);
-
         async function fetchData() {
             const fetchTrending = await fetchTMDBconfig(
                 "trending/movie/week?language=pt-BR"
@@ -66,8 +53,6 @@ const MoviesContextProvider = ({ children }: Props) => {
                 "genre/movie/list?language=pt"
             );
             setGenres(fetchGenres.genres);
-
-            setLoading(false);
         }
 
         fetchData();
