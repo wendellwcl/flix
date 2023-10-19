@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 //Context
-import { MoviesContext } from "../../contexts/MoviesContext";
+import { GenresContext } from "../../contexts/GenresContext";
 
 //Interfaces
 import { IMovie } from "../../interfaces/interfaces";
@@ -18,7 +18,7 @@ interface Props {
 }
 
 const MovieCardDefault = ({ movie }: Props) => {
-    const { genres } = useContext(MoviesContext);
+    const { genres } = useContext(GenresContext);
 
     const [movieGenre, setMovieGenre] = useState<string | null>(null);
 
