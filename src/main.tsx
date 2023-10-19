@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 //Context
-import MoviesContextProvider from "./contexts/MoviesContext";
 import GenresContextProvider from "./contexts/GenresContext";
 
 //Pages
@@ -49,10 +48,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-        <MoviesContextProvider>
-            <GenresContextProvider>
-                <RouterProvider router={router} />
-            </GenresContextProvider>
-        </MoviesContextProvider>
+        <GenresContextProvider>
+            <RouterProvider router={router} />
+        </GenresContextProvider>
     </React.StrictMode>
 );
