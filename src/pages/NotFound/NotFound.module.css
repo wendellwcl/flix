@@ -17,7 +17,7 @@
   font-size: 1.2em;
 }
 .notFound_container .emphasis {
-  color: #db413b;
+  color: #f04e4e;
   font-size: 2em;
   font-weight: bold;
 }
@@ -25,13 +25,13 @@
   border: none;
   border-radius: 1em;
   padding: 0.5em 1em;
-  background: #db413b;
-  color: #f5fbfc;
+  background: #f04e4e;
+  color: #f7f7f7;
   font-size: 0.9em;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.5s;
   padding: 1em;
 }
 .notFound_container a:hover {
-  background-color: #9c2e2a;
+  background-color: #d41e24;
 }/*# sourceMappingURL=NotFound.module.css.map */

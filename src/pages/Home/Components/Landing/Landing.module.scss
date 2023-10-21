@@ -5,8 +5,8 @@
     width: 100%;
     height: calc(100vh - 68.8px);
     color: $color-light-1;
-    background: url("../../../../assets/img/bg.jpg") no-repeat right top fixed
-        $color-main-superdark;
+    background: url("../../../../assets/img/bg.png") no-repeat right top fixed
+        $color-dark-1;
     background-size: cover;
     position: relative;
     z-index: 1;
@@ -19,7 +19,7 @@
         width: 100%;
         height: 100%;
         background-color: $color-dark-1;
-        opacity: 0.95;
+        opacity: 0.6;
         z-index: 1;
     }
 }

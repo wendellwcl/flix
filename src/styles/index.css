@@ -8,7 +8,7 @@
 
 html,
 body {
-  background-color: #f5fbfc;
+  background-color: #f7f7f7;
 }
 
 body {
@@ -25,21 +25,19 @@ li {
 }
 
 .header-offScreen {
+  background-color: #1e1a1a !important;
+  color: #f04e4e !important;
+  padding: 12px 0 !important;
   position: fixed !important;
-  top: 20px !important;
-  z-index: 100 !important;
-  visibility: hidden !important;
+  top: 30px !important;
   opacity: 0 !important;
+  z-index: 100 !important;
 }
 
 .header-show {
-  background-color: #140c0c !important;
-  color: #db413b !important;
-  padding: 12px 0 !important;
   top: 0 !important;
-  visibility: visible !important;
   opacity: 1 !important;
-  transition: top 0.25s ease-in, visibility 0.25s ease-in, opacity 0.25s ease-in;
+  transition: top 0.3s ease-out, opacity 0.3s ease-out;
 }
 
 .loading_placeholder {

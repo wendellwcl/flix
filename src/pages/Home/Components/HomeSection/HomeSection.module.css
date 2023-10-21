@@ -32,7 +32,7 @@
 }
 .section_header .section_title {
   font-size: 2em;
-  color: #db413b;
+  color: #f04e4e;
 }
 @media screen and (max-width: 480px) {
   .section_header .section_title {
@@ -41,7 +41,7 @@
 }
 .section_header .section_subtitle {
   display: inline-block;
-  color: #181a1a;
+  color: #3e3b3b;
   font-weight: bold;
   margin-bottom: 0.5em;
 }
@@ -54,16 +54,16 @@
   border: none;
   border-radius: 1em;
   padding: 0.5em 1em;
-  background: #db413b;
-  color: #f5fbfc;
+  background: #f04e4e;
+  color: #f7f7f7;
   font-size: 0.9em;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.5s;
   padding: 1em;
   border-radius: 1.5em;
 }
 .section_header .section_btn:hover {
-  background-color: #9c2e2a;
+  background-color: #d41e24;
 }
 @media screen and (max-width: 480px) {
   .section_header .section_btn {

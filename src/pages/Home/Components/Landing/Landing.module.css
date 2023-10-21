@@ -1,8 +1,8 @@
 .landing {
   width: 100%;
   height: calc(100vh - 68.8px);
-  color: #f5fbfc;
-  background: url("../../../../assets/img/bg.jpg") no-repeat right top fixed #140c0c;
+  color: #f7f7f7;
+  background: url("../../../../assets/img/bg.png") no-repeat right top fixed #1e1a1a;
   background-size: cover;
   position: relative;
   z-index: 1;
@@ -14,8 +14,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #141414;
-  opacity: 0.95;
+  background-color: #1e1a1a;
+  opacity: 0.6;
   z-index: 1;
 }
 
@@ -32,7 +32,7 @@
 
 .greeting_container {
   margin-bottom: 64px;
-  color: #f5fbfc;
+  color: #f7f7f7;
   z-index: 3;
 }
 .greeting_container .greeting {
@@ -43,7 +43,7 @@
 }
 .greeting_container .greeting h2 {
   font-size: 2.5em;
-  color: #bfa65c;
+  color: #d4b96a;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -64,19 +64,19 @@
   border: none;
   display: inline-block;
   width: 100%;
-  background-color: #f5fbfc;
-  color: #181a1a;
+  background-color: #f7f7f7;
+  color: #3e3b3b;
 }
 .search_form .search_input button {
   border: none;
   border-radius: 1em;
   padding: 0.5em 1em;
-  background: #db413b;
-  color: #f5fbfc;
+  background: #f04e4e;
+  color: #f7f7f7;
   font-size: 0.9em;
   cursor: pointer;
-  transition: all 0.2s;
-  background-color: #bfa65c;
+  transition: all 0.5s;
+  background-color: #d4b96a;
   border-radius: 1.5em;
   position: absolute;
   right: 0;
@@ -84,8 +84,8 @@
   height: 100%;
 }
 .search_form .search_input button:hover {
-  background-color: #9c2e2a;
+  background-color: #d41e24;
 }
 .search_form .search_input button:hover {
-  background-color: #a38e4e;
+  background-color: #c2a14d;
 }/*# sourceMappingURL=Landing.module.css.map */

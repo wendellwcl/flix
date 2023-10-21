@@ -10,18 +10,18 @@
   border: none;
   border-radius: 1em;
   padding: 0.5em 1em;
-  background: #db413b;
-  color: #f5fbfc;
+  background: #f04e4e;
+  color: #f7f7f7;
   font-size: 0.9em;
   cursor: pointer;
-  transition: all 0.2s;
-  background-color: #db413b;
+  transition: all 0.5s;
+  background-color: #f04e4e;
 }
 .pagination_container button:hover {
-  background-color: #9c2e2a;
+  background-color: #d41e24;
 }
 .pagination_container button:hover {
-  background-color: #bfa65c;
+  background-color: #d4b96a;
 }
 .pagination_container button:disabled {
   cursor: not-allowed;

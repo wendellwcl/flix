@@ -5,7 +5,7 @@
   flex: 1 1 180px;
   max-width: 200px;
   border-radius: 1em;
-  background-color: #f5fbfc;
+  background-color: #f7f7f7;
   overflow: hidden;
   transition: all 0.25s;
 }
@@ -16,7 +16,7 @@
   }
 }
 .card_container:hover .title {
-  color: #9c2e2a;
+  color: #d41e24;
 }
 
 .img_container {
@@ -30,7 +30,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  color: #524e4e;
+  color: #e6e2e2;
 }
 .img_container img {
   width: 100%;
@@ -60,24 +60,24 @@
   white-space: nowrap;
   text-overflow: " ...";
   margin-bottom: 0.1em;
-  color: #141414;
+  color: #1e1a1a;
   transition: all 0.25s;
 }
 .info_container .genre {
   font-size: 0.8em;
-  color: #181a1a;
+  color: #3e3b3b;
   margin-bottom: 0.5em;
 }
 .info_container a {
   border: none;
   border-radius: 1em;
   padding: 0.5em 1em;
-  background: #db413b;
-  color: #f5fbfc;
+  background: #f04e4e;
+  color: #f7f7f7;
   font-size: 0.9em;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.5s;
 }
 .info_container a:hover {
-  background-color: #9c2e2a;
+  background-color: #d41e24;
 }/*# sourceMappingURL=MovieCardDefault.module.css.map */
