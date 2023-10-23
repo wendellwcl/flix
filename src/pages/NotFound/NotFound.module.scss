@@ -14,17 +14,15 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-bottom: 24px;
-    }
+        color: $color-light-1;
+        font-size: 1.1em;
+        margin-bottom: 2em;
 
-    span {
-        font-size: 1.2em;
-    }
-
-    .emphasis {
-        color: $color-main;
-        font-size: 2em;
-        font-weight: bold;
+        .emphasis {
+            color: $color-main;
+            font-size: 2em;
+            font-weight: bold;
+        }
     }
 
     a {

@@ -2,25 +2,22 @@
 
 .footer {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     background-color: $color-dark-1;
-    padding: 2em;
+    padding: 1em;
     border-radius: 7em 7em 0 0;
-    color: $color-light-1;
 
     @media screen and (max-width: 480px) {
         border-radius: 3em 3em 0 0;
     }
 
-    a {
-        color: inherit;
-    }
-
     .footer_title {
+        color: $color-secondary;
+        font-weight: bold;
+        font-size: 0.9em;
         margin-bottom: 1em;
-        font-size: 1.1em;
     }
 
     .credits_container {

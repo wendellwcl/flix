@@ -11,12 +11,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 24px;
+  color: #f7f7f7;
+  font-size: 1.1em;
+  margin-bottom: 2em;
 }
-.notFound_container span {
-  font-size: 1.2em;
-}
-.notFound_container .emphasis {
+.notFound_container .message .emphasis {
   color: #f04e4e;
   font-size: 2em;
   font-weight: bold;

@@ -2,8 +2,9 @@
   width: 100vw;
   max-width: 1140px;
   margin: 0 auto;
-  padding: 1em;
+  padding: 2em;
   min-height: calc(100vh - 68.8px);
+  color: #f7f7f7;
 }
 
 .results_body .noResults_msg {

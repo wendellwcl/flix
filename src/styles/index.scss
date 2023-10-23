@@ -12,7 +12,7 @@
 
 html,
 body {
-    background-color: $color-light-1;
+    background-color: $color-dark-2;
 }
 
 body {
@@ -29,8 +29,6 @@ li {
 }
 
 .header-offScreen {
-    background-color: $color-dark-1 !important;
-    color: $color-main !important;
     padding: 12px 0 !important;
     position: fixed !important;
     top: 30px !important;

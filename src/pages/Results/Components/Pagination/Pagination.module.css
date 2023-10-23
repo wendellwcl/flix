@@ -6,6 +6,9 @@
   justify-content: center;
   gap: 1.5em;
 }
+.pagination_container .page_number {
+  font-weight: bold;
+}
 .pagination_container button {
   border: none;
   border-radius: 1em;
@@ -21,9 +24,12 @@
   background-color: #d41e24;
 }
 .pagination_container button:hover {
-  background-color: #d4b96a;
+  background-color: #d41e24;
 }
 .pagination_container button:disabled {
   cursor: not-allowed;
-  background-color: #ccc;
+  opacity: 0.2;
+}
+.pagination_container button:disabled:hover {
+  background-color: #f04e4e;
 }/*# sourceMappingURL=Pagination.module.css.map */

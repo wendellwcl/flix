@@ -1,13 +1,14 @@
 .card_container {
-  background-color: #d4b96a;
+  background-color: #f04e4e;
   border-radius: 1em;
   color: #f7f7f7;
   overflow: hidden;
   flex: 1 1 180px;
   max-width: 200px;
+  transition: all 0.5s;
 }
 .card_container:hover {
-  background-color: #c2a14d;
+  background-color: #d41e24;
 }
 @media screen and (max-width: 480px) {
   .card_container {
@@ -16,21 +17,22 @@
   }
 }
 .card_container .card_img {
-  width: 100%;
   aspect-ratio: 2/3;
+  width: 100%;
 }
 .card_container .card_img img {
+  aspect-ratio: 2/3;
+  width: 100%;
   display: none;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  aspect-ratio: inherit;
   text-align: center;
 }
 .card_container .date {
   display: block;
   padding: 0.75em 0;
   font-size: 0.9em;
-  font-weight: bold;
+  font-weight: 700;
   text-align: center;
+  letter-spacing: 1px;
 }/*# sourceMappingURL=MovieCard2.module.css.map */

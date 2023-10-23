@@ -9,8 +9,9 @@
   justify-content: center;
 }
 .errorPage_container .message {
+  color: #f7f7f7;
   font-size: 1.2em;
-  margin-bottom: 24px;
+  margin-bottom: 2em;
 }
 .errorPage_container a {
   border: none;

@@ -3,7 +3,7 @@ import tmbd_logo from "../../assets/img/tmdb_logo.svg";
 import freepik_logo from "../../assets/img/freepik-logo.png";
 
 //Components
-import FooterCreditItem from "./Components/FooterCreditItem/FooterCreditItem";
+import FooterCreditItem from "./components/FooterCreditItem/FooterCreditItem";
 
 //Style
 import style from "./Footer.module.css";
@@ -11,7 +11,7 @@ import style from "./Footer.module.css";
 const Footer = () => {
     return (
         <footer className={style.footer}>
-            <span className={style.footer_title}>Créditos:</span>
+            <span className={style.footer_title}>Créditos</span>
             <div className={style.credits_container}>
                 <FooterCreditItem
                     name="The Movie Database"

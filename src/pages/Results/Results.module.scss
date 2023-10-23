@@ -3,8 +3,9 @@
 
 .results_container {
     @include container_default;
-    padding: 1em;
+    padding: 2em;
     min-height: calc(100vh - $header-height);
+    color: $color-light-1;
 }
 
 .results_body {

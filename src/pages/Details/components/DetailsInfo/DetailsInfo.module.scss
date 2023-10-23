@@ -1,17 +1,26 @@
 @import "../../../../styles/partials/variables";
 
 .details_infos {
+    width: 100%;
+    align-self: flex-start;
     padding: 1em;
-    margin-bottom: 2em;
+    margin: 2em 0;
+    color: $color-light-1;
+
+    @media screen and (max-width: 862px) {
+        margin: 0em;
+        padding: 0 1em;
+    }
 }
 
 .details_title {
     font-size: 1.5em;
     margin-bottom: 0.5em;
+    color: $color-main;
 }
 
 .details_tagline {
-    color: $color-main;
+    color: $color-secondary;
     font-weight: bold;
     margin-bottom: 1.5em;
 }

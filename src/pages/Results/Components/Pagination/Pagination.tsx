@@ -41,7 +41,7 @@ const Pagination = ({
             <button onClick={handlePrevPage} disabled={pageNumber == 1}>
                 &lt;
             </button>
-            <span>{pageNumber}</span>
+            <span className={style.page_number}>{pageNumber}</span>
             <button
                 onClick={handleNextPage}
                 disabled={pageNumber >= 500 || pageNumber >= totalPages!}

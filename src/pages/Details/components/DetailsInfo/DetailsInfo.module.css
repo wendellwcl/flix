@@ -1,15 +1,25 @@
 .details_infos {
+  width: 100%;
+  align-self: flex-start;
   padding: 1em;
-  margin-bottom: 2em;
+  margin: 2em 0;
+  color: #f7f7f7;
+}
+@media screen and (max-width: 862px) {
+  .details_infos {
+    margin: 0em;
+    padding: 0 1em;
+  }
 }
 
 .details_title {
   font-size: 1.5em;
   margin-bottom: 0.5em;
+  color: #f04e4e;
 }
 
 .details_tagline {
-  color: #f04e4e;
+  color: #d4b96a;
   font-weight: bold;
   margin-bottom: 1.5em;
 }

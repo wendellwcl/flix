@@ -3,26 +3,27 @@
 
 .details_img_container {
     max-height: calc(100vh - $header-height);
-    width: 100%;
     padding: 1em;
     display: flex;
     align-items: center;
     justify-content: center;
 
     .details_img {
+        aspect-ratio: 2/3;
         width: 100%;
         max-width: 400px;
-        aspect-ratio: 2/3;
-        background-color: #ccc;
+        background-color: $color-dark-1;
         border-radius: 1em;
         overflow: hidden;
 
         img {
             display: none;
-            width: 100%;
             aspect-ratio: 2/3;
+            width: 100%;
             align-items: center;
             justify-content: center;
+            color: $color-light-1;
+            font-style: italic;
         }
     }
 }

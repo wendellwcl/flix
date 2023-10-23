@@ -8,17 +8,25 @@
     justify-content: center;
     gap: 1.5em;
 
+    .page_number {
+        font-weight: bold;
+    }
+
     button {
         @include btn_default;
         background-color: $color-main;
 
         &:hover {
-            background-color: $color-secondary;
+            background-color: $color-main-hover;
         }
 
         &:disabled {
             cursor: not-allowed;
-            background-color: #ccc;
+            opacity: 0.2;
+
+            &:hover {
+                background-color: $color-main;
+            }
         }
     }
 }

@@ -8,10 +8,10 @@ interface Props {
 const ResultsHeader = ({ query }: Props) => {
     return (
         <div className={style.results_header}>
-            <h2 className={style.results_title}>
+            <p className={style.results_title}>
                 Resultados para:
                 <span> "{query}"</span>
-            </h2>
+            </p>
         </div>
     );
 };

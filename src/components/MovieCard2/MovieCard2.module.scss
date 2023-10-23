@@ -1,15 +1,16 @@
 @import "../../styles/partials/variables";
 
 .card_container {
-    background-color: $color-secondary;
+    background-color: $color-main;
     border-radius: 1em;
     color: $color-light-1;
     overflow: hidden;
     flex: 1 1 180px;
     max-width: 200px;
+    transition: all 0.5s;
 
     &:hover {
-        background-color: $color-secondary-hover;
+        background-color: $color-main-hover;
     }
 
     @media screen and (max-width: 480px) {
@@ -18,15 +19,15 @@
     }
 
     .card_img {
-        width: 100%;
         aspect-ratio: 2/3;
+        width: 100%;
 
         img {
+            aspect-ratio: 2/3;
+            width: 100%;
             display: none;
             align-items: center;
             justify-content: center;
-            width: 100%;
-            aspect-ratio: inherit;
             text-align: center;
         }
     }
@@ -35,7 +36,8 @@
         display: block;
         padding: 0.75em 0;
         font-size: 0.9em;
-        font-weight: bold;
+        font-weight: 700;
         text-align: center;
+        letter-spacing: 1px;
     }
 }

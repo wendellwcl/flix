@@ -1,13 +1,12 @@
 @import "../../../../styles/partials/variables";
 
 .results_header {
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
 
     .results_title {
-        font-size: 1.2em;
-
         span {
-            font-size: 1.2em;
+            font-size: 1.5em;
+            font-weight: bold;
             color: $color-main;
         }
     }

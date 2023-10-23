@@ -10,8 +10,9 @@
     justify-content: center;
 
     .message {
+        color: $color-light-1;
         font-size: 1.2em;
-        margin-bottom: 24px;
+        margin-bottom: 2em;
     }
 
     a {

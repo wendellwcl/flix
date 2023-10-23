@@ -1,23 +1,24 @@
 .details_img_container {
   max-height: calc(100vh - 68.8px);
-  width: 100%;
   padding: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .details_img_container .details_img {
+  aspect-ratio: 2/3;
   width: 100%;
   max-width: 400px;
-  aspect-ratio: 2/3;
-  background-color: #ccc;
+  background-color: #1e1a1a;
   border-radius: 1em;
   overflow: hidden;
 }
 .details_img_container .details_img img {
   display: none;
-  width: 100%;
   aspect-ratio: 2/3;
+  width: 100%;
   align-items: center;
   justify-content: center;
+  color: #f7f7f7;
+  font-style: italic;
 }/*# sourceMappingURL=DetailsImg.module.css.map */

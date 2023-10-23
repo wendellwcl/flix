@@ -9,9 +9,9 @@ interface Props {
 
 const MicroInfo = ({ text, value, unity }: Props) => {
     return (
-        <p>
+        <p className={style.micro_info}>
             {text}:&nbsp;
-            <span className={style.micro_info}>
+            <span>
                 {Array.isArray(value) ? (
                     value.map((item) => (
                         <span key={item.name} className={style.info_item}>
