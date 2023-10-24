@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 
 //Context
 import GenresContextProvider from "./contexts/GenresContext";
@@ -17,7 +17,7 @@ import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import "normalize.css";
 import "./styles/index.css";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: "/",
         element: <Root />,
